@@ -149,7 +149,7 @@
                     {{ html()->hidden($field_name)->value("Reply of ".$comment->name)->attributes(["$required"]) }}
                     {{ html()->hidden($field_name)->value(encode_id(auth()->user()->id))->attributes(["$required"]) }}
 
-                    <div class="flex-auto mx-4">
+                    <div class="flex-auto mr-4">
                         <?php
                         $field_name = 'comment';
                         $field_label = "Reply";
