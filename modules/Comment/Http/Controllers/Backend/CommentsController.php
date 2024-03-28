@@ -132,4 +132,37 @@ class CommentsController extends BackendBaseController
             compact('module_title', 'module_name', 'module_icon', 'module_name_singular', 'module_action', "$module_name_singular", 'activities')
         );
     }
+
+    /**
+     * Updates a resource.
+     *
+     * @param  int  $id
+     * @param  Request  $request  The request object.
+     * @param  mixed  $id  The ID of the resource to update.
+     * @return Response
+     * @return RedirectResponse The redirect response.
+     *
+     * @throws ModelNotFoundException If the resource is not found.
+     */
+    public function update(Request $request, $id)
+    {
+        $module_title = $this->module_title;
+        $module_name = $this->module_name;
+        $module_path = $this->module_path;
+        $module_icon = $this->module_icon;
+        $module_model = $this->module_model;
+        $module_name_singular = Str::singular($module_name);
+
+        $module_action = 'Update';
+
+        $$module_name_singular = $module_model::findOrFail($id);
+
+        $$module_name_singular->update($request->all());
+
+        flash(icon().' '.Str::singular($module_title)."' Updated Successfully")->success()->important();
+
+        logUserAccess($module_title.' '.$module_action.' | Id: '.$$module_name_singular->id);
+
+        return redirect()->route("backend.{$module_name}.show", $$module_name_singular->id);
+    }
 }
