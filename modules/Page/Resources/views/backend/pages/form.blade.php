@@ -81,9 +81,9 @@
             {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
             <div class="input-group">
                 {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image', 'aria-describedby'=>'button-image']) }}
-                <div class="input-group-append">
+                <!-- <div class="input-group-append">
                     <button class="btn btn-info border-radius-l-0" type="button" id="button-image" data-input="{{$field_name}}"><i class="fas fa-folder-open"></i> @lang('Browse')</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

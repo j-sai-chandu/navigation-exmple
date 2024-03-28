@@ -124,6 +124,26 @@
     <div class="col-12">
         <div class="form-group">
             <?php
+            $field_name = 'featured_image';
+            $field_label = __("article::$module_name.$field_name");
+            $field_placeholder = $field_label;
+            $required = "";
+            ?>
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            <div class="input-group">
+                {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image', 'aria-describedby'=>'button-image']) }}
+                <!-- <div class="input-group-append">
+                    <button class="btn btn-info border-radius-l-0" type="button" id="button-image" data-input="{{$field_name}}"><i class="fas fa-folder-open"></i> @lang('Browse')</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="form-group">
+            <?php
             $field_name = 'content';
             $field_label = __("article::$module_name.$field_name");
             $field_placeholder = $field_label;
@@ -163,26 +183,6 @@
             {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
             <!--{{ html()->datetime($field_name)->placeholder($field_placeholder)->class('form-control datetimepicker')->attributes(["$required"]) }}-->
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
-        </div>
-    </div>
-</div>
-
-<div class="row mb-3">
-    <div class="col-12">
-        <div class="form-group">
-            <?php
-            $field_name = 'featured_image';
-            $field_label = __("article::$module_name.$field_name");
-            $field_placeholder = $field_label;
-            $required = "";
-            ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
-            <div class="input-group">
-                {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image', 'aria-describedby'=>'button-image']) }}
-                <div class="input-group-append">
-                    <button class="btn btn-info border-radius-l-0" type="button" id="button-image" data-input="{{$field_name}}"><i class="fas fa-folder-open"></i> @lang('Browse')</button>
-                </div>
-            </div>
         </div>
     </div>
 </div>
