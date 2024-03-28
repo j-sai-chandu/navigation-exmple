@@ -176,4 +176,4 @@
 <x-library.select2 />
 
 <!-- TinyMce editor -->
-<x-library.tinymce selector="#content" />
+<x-library.tinymce selector="textarea#content" />
