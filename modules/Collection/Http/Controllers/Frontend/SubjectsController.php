@@ -58,7 +58,9 @@ class SubjectsController extends Controller
 
         $meta_page_type = 'collection';
 
-        $$module_name = $module_model::get();
+        // $$module_name = $module_model::get();
+        
+        $featured_data = $module_model::where('is_featured', true)->orderBy('created_at', 'desc')->get();
         
         // $taxon_data = $taxon_model::select('id', 'name', 'slug', 'status', 'icon_class')->get();
         $taxon_data = $taxon_model::get();
@@ -84,7 +86,7 @@ class SubjectsController extends Controller
 
         return view(
             "collection::frontend.{$module_path}.index",
-            compact('module_title', 'module_name', "$module_name", 'module_group_data', 'module_icon', 'module_action', 'module_name_singular', 'meta_page_type')
+            compact('module_title', 'module_name', "featured_data", 'module_group_data', 'module_icon', 'module_action', 'module_name_singular', 'meta_page_type')
         );
     }
 

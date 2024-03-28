@@ -17,6 +17,43 @@
             <x-search />
 
             @include('frontend.includes.messages')
+            
+        </div>
+    </div>
+</section>
+
+<section class="mx-auto bg-gray-100 px-8">
+    <div class="bg-white border border-gray-200 rounded-lg hover:shadow-lg p-8">
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+            @foreach ($featured_data as $index => $featured)
+                @php
+                    $detail_url = route("frontend.$module_name.show",[encode_id($featured->id), $featured->slug]);
+                    $target_link = setting('subject_target') == 0 ? $featured->site.'?from=costar' : $detail_url;
+                    $favicon = getFavicon($featured->site);
+                @endphp
+                <div 
+                    class="flex flex-col p-2 rounded-lg hover:bg-light-blue"
+                    data-toggle="tooltip" 
+                    data-coreui-placement="top" 
+                    title="{{$featured->description ?? $featured->name}}"
+                >
+                <a class="subject-item block" href="{{$target_link}}" target="_blank">
+                    <div class="flex items-center">
+                        <div class="flex-0-0-48">
+                            <div class="favicon">
+                                <img class="rounded-lg" src="{{$favicon}}" width="36" alt="{{$featured->name}}" />
+                            </div>
+                        </div>
+                        <div class="flex-1 truncate">
+                            <h2 class="uppercase text-base truncate">{{$featured->name}}</h2>
+                            <p class="text-gray-500 truncate">
+                                {{$featured->site}}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>
