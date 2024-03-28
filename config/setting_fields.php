@@ -37,19 +37,6 @@ return [
                     1 => 'Hidden'
                 ]
             ],
-            [
-                'type' => 'radio', // input fields type
-                'data' => 'string', // data type, string, int, boolean
-                'name' => 'subject_target', // unique name for field
-                'label' => 'Subject link target', // you know what label it is
-                'rules' => '', // validation rule of laravel
-                'class' => '', // any class for input
-                'value' => '1', // default value if you want
-                'options' => [
-                    0 => 'Destination link',
-                    1 => 'Detail link'
-                ]
-            ],
         ],
     ],
     'collection' => [
