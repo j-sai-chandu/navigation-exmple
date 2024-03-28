@@ -18,6 +18,7 @@ class CreateSubjectsTable extends Migration
             $table->string('name');
             $table->string('slug')->nullable();
             $table->text('site')->nullable();
+            $table->integer('is_featured')->nullable();
             $table->integer('taxon_id')->unsigned()->nullable();
             $table->string('taxon_name')->nullable();
             $table->text('description')->nullable();

@@ -30,6 +30,7 @@ class SubjectsRequest extends FormRequest
             'taxon_id' => 'required|numeric',
             'order' => 'nullable|numeric',
             'status' => 'required',
+            'is_featured' => 'nullable',
         ];
     }
 }

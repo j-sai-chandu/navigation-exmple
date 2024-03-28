@@ -28,6 +28,7 @@ class SubjectFactory extends Factory
             'status' => 1,
             'taxon_id' => $this->faker->numberBetween(1, 5),
             'site' => '',
+            'is_featured' => $this->faker->randomElement([1, 0]),
             'description' => $this->faker->paragraph,
             'meta_title' => '',
             'meta_keywords' => '',

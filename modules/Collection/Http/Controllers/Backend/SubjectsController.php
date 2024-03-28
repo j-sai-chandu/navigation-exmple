@@ -86,7 +86,7 @@ class SubjectsController extends Controller
 
         $module_action = 'List';
 
-        $$module_name = $module_model::select('id', 'name', 'taxon_name', 'status', 'updated_at');
+        $$module_name = $module_model::select('id', 'name', 'taxon_name', 'status', 'is_featured', 'updated_at');
 
         $data = $$module_name;
 
@@ -97,7 +97,9 @@ class SubjectsController extends Controller
                 return view('backend.includes.action_column', compact('module_name', 'data'));
             })
             ->editColumn('name', function ($data) {
-                return $data->name.' '.$data->status_formatted;
+                $is_featured = $data->is_featured ? '<span class="badge bg-primary">'.__("Featured").'</span>' : '';
+
+                return $data->name.' '.$data->status_formatted.' '.$is_featured;
             })
             ->editColumn('updated_at', function ($data) {
                 $module_name = $this->module_name;

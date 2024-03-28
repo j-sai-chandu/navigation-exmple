@@ -87,6 +87,13 @@ class Subject extends BaseModel
         }
     }
 
+    public function scopeFeatured($query)
+    {
+        return $query->where('is_featured', '=', 'Yes')
+            ->where('status', '=', '1')
+            ->where('published_at', '<=', Carbon::now());
+    }
+
     /**
      * Get the list of Recently Published Collections.
      *
