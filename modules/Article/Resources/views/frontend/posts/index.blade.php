@@ -19,6 +19,16 @@
     </div>
 </section>
 
+<section>
+    <ul>
+        @foreach ($featured_data as $index => $featured)
+            <li>
+                <h2 class="uppercase text-base truncate">{{$featured->name}}</h2>
+            </li>
+        @endforeach
+    </ul>
+</section>
+
 <section class="bg-white text-gray-600 p-6 sm:p-20">
     <div class="mx-auto flex md:flex-row flex-col">
         <div class="flex flex-col lg:flex-grow sm:w-8/12 sm:pr-8">

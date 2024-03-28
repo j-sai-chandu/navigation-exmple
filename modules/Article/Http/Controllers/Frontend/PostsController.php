@@ -54,11 +54,13 @@ class PostsController extends Controller
 
         $meta_page_type = 'article';
 
+        $featured_data = $module_model::where('is_featured', true)->orderBy('created_at', 'desc')->get();
+
         $$module_name = $module_model::latest()->with(['category', 'tags', 'comments'])->paginate(10);
 
         return view(
             "article::frontend.{$module_path}.index",
-            compact('module_title', 'module_name', "$module_name", 'module_icon', 'module_action', 'module_name_singular', 'meta_page_type')
+            compact('module_title', 'module_name', "$module_name", 'featured_data', 'module_icon', 'module_action', 'module_name_singular', 'meta_page_type')
         );
     }
 
