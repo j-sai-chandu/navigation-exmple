@@ -42,16 +42,16 @@
         <hr>
 
         <div class="row mt-4">
-            <div class="col">
+            <div class="col-12">
 
                 @include('backend.includes.show')
 
             </div>
-            <div class="col">
+            <div class="col-12">
 
                 <div class="text-center">
                     <a 
-                        href='{{ route("backend.$module_name.show", [encode_id($$module_name_singular->id), $$module_name_singular->slug]) }}'
+                        href='{{ route("backend.$module_name.show", $$module_name_singular->id) }}'
                         class="btn btn-success" 
                         target="_blank"
                     >
