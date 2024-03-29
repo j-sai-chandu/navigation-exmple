@@ -8,7 +8,6 @@
     "App Name": "应用名称",
     "Footer Text": "页脚文字",
     "Show Copyright": "显示版权",
-    
     "Meta": "Meta设置",
     "Application Meta Data": "应用Meat数据",
     "Meta Site Name": "Meta网址名称",
@@ -16,16 +15,13 @@
     "Meta Keyword": "Meta关键字",
     "Meta Image": "Meta图像",
     "Email settings for app": "应用程序的电子邮件",
-    
     "Analytics": "分析设置",
     "Application Analytics": "应用分析设置",
     "Google Analytics": "Google Analytics",
-    
     "Custom Code": "自定义代码",
     "Custom code area": "自定义代码区域",
     "Custom Css Code": "自定义样式代码",
     "Paste the code in this field.": "将代码粘贴到该字段中",
-    
     "Social Profiles": "社交档案",
     "Link of all the online/social profiles.": "所有在线/社交资料的链接",
     "Website URL": "网址URL",
@@ -41,6 +37,8 @@
     "Forgot your password?": "忘记密码？",
     "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.": "忘记密码了吗？填写您的电子邮件地址，会发送一个密码重置链接到您的邮箱",
     "Email Password Reset Link": "获取密码重置链接",
+
+    "Featured": "推荐",
 
     "Value": "值",
     "Index": "索引",

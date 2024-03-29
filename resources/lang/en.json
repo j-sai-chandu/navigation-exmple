@@ -26,7 +26,6 @@
     "Link of all the online/social profiles.": "Link of all the online/social profiles.",
     "Website URL": "Website URL",
 
-
     "Name": "Name",
     "Email": "Email",
     "Password": "Password",
@@ -38,6 +37,8 @@
     "Forgot your password?": "Forgot your password?",
     "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.": "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.",
     "Email Password Reset Link": "Email Password Reset Link",
+
+    "Featured": "Featured",
 
     "Value": "Value",
     "Index": "Index",
