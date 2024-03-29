@@ -39,7 +39,7 @@
                     @endphp
                     <x-frontend.list 
                         :url="$detail_url" 
-                        :name="$$module_name_singular->name" 
+                        :title="$$module_name_singular->name" 
                         :image="$$module_name_singular->featured_image"
                     >
                         @if($$module_name_singular->created_by_alias)
@@ -68,7 +68,10 @@
                             <span class="w-6">
                                 <i class="fa fa-fw fa-folder-open"></i>
                             </span>
-                            <x-frontend.badge :url="route('frontend.categories.show', [encode_id($$module_name_singular->category_id), $$module_name_singular->category->slug])" :text="$$module_name_singular->category_name" />
+                            <x-frontend.badge 
+                                :url="route('frontend.categories.show', [encode_id($$module_name_singular->category_id), $$module_name_singular->category->slug])" 
+                                :text="$$module_name_singular->category_name"
+                            />
                         </div>
                         @if(count($$module_name_singular->tags))
                         <div class="flex flex-row items-center">
@@ -76,7 +79,10 @@
                                 <i class="fa fa-tag"></i> 
                             </span>
                             @foreach ($$module_name_singular->tags as $tag)
-                            <x-frontend.badge :url="route('frontend.tags.show', [encode_id($tag->id), $tag->slug])" :text="$tag->name" />
+                            <x-frontend.badge 
+                                :url="route('frontend.tags.show', [encode_id($tag->id), $tag->slug])" 
+                                :text="$tag->name"
+                            />
                             @endforeach
                         </div>
                         @endif

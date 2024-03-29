@@ -28,7 +28,10 @@
                     $detail_url = route("frontend.$module_name.show",[encode_id($$module_name_singular->id), $$module_name_singular->slug]);
                     @endphp
                 
-                    <x-frontend.list :url="$detail_url" :name="$$module_name_singular->name">
+                    <x-frontend.list 
+                        :url="$detail_url"
+                        :title="$$module_name_singular->name"
+                    >
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             {{$$module_name_singular->description}}
                         </p>
