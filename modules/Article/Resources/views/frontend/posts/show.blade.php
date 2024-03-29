@@ -5,8 +5,8 @@
 @section('content')
 
 <section class="bg-gray-100 text-gray-600 body-font px-6 sm:px-20">
-    <div class="container mx-auto flex py-8 sm:py-16 md:flex-row flex-col items-center">
-        <div class="w-full flex flex-col items-center">
+    <div class="container mx-auto flex flex-col items-center py-8 sm:py-16">
+        <div class="w-full flex flex-col items-center mb-4 sm:mb-0">
             <p class="mb-8 leading-relaxed">
                 <a href="{{route('frontend.'.$module_name.'.index')}}" class="outline outline-1 outline-gray-800 bg-gray-200 hover:bg-gray-100 text-gray-800 text-sm font-semibold mr-2 px-3 py-1 rounded dark:bg-gray-700 dark:text-gray-300">
                     {{ __($module_title) }}
@@ -24,7 +24,7 @@
             @include('frontend.includes.messages')
         </div>
         @if($$module_name_singular->featured_image != "")
-        <div class="w-full sm:w-8/12 mb-4 sm:mb-0">
+        <div class="w-full mb-4 sm:mb-0">
             <img class="object-cover object-center rounded shadow-md" alt="{{$$module_name_singular->name}}" src="{{$$module_name_singular->featured_image}}">
         </div>
         @endif
