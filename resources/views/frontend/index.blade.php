@@ -7,7 +7,7 @@
 <section class="bg-gray-100">
     <div class="container mx-auto flex px-1 sm:px-20 py-20 md:flex-row flex-col items-center">
         <div class="flex flex-col items-center text-center lg:max-w-lg md:w-2/5 w-1/3 mb-10 md:mb-0">
-            <img class="object-cover object-center rounded" alt="hero" src="{{asset('images/default.png')}}" />
+            <img class="object-cover object-center rounded" alt="hero" src="{{asset('images/meta-image.png')}}" />
         </div>
         <div class="flex flex-col lg:flex-grow md:items-start md:text-left items-center text-center md:w-3/5 w-2/3 px-4 md:pl-8">
             <h1 class="title-font sm:text-5xl text-5xl mb-4 font-medium text-gray-800">

@@ -107,7 +107,7 @@ return [
                 'label' => 'Meta Image', // you know what label it is
                 'rules' => '', // validation rule of laravel
                 'class' => '', // any class for input
-                'value' => 'images/default.png', // default value if you want
+                'value' => 'images/meta-image.png', // default value if you want
             ],
         ],
     ],
