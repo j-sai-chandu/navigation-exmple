@@ -48,7 +48,6 @@ class PostsController extends Controller
         $module_path = $this->module_path;
         $module_icon = $this->module_icon;
         $module_model = $this->module_model;
-        $module_name_singular = Str::singular($module_name);
 
         $module_action = 'List';
 
@@ -56,13 +55,13 @@ class PostsController extends Controller
 
         $featured_data = $module_model::where('is_featured', true)->orderBy('created_at', 'desc')->get();
 
-        $$module_name = $module_model::latest()->with(['category', 'tags', 'comments'])->paginate(10);
+        $posts_data = $module_model::latest()->with(['category', 'tags', 'comments'])->paginate(10);
 
         $recent_data = $module_model::recentlyPublished()->take(5)->get();
 
         return view(
             "article::frontend.{$module_path}.index",
-            compact('module_title', 'module_name', "$module_name", 'featured_data', 'recent_data', 'module_icon', 'module_action', 'module_name_singular', 'meta_page_type')
+            compact('module_title', 'module_name', "posts_data", 'featured_data', 'recent_data', 'module_icon', 'module_action', 'meta_page_type')
         );
     }
 
