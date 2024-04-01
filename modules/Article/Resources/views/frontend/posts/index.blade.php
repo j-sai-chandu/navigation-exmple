@@ -114,7 +114,7 @@
                                     @if($row->featured_image != "")  
                                         <img alt="{{ $row->name }}" src="{{$row->featured_image}}" class="mx-auto object-cover rounded h-10 " />
                                     @else
-                                    <x-image-placeholder width='48' height='40' text="Costar" fontSize="14px" class="transform hover:scale-110 duration-300" />
+                                    <x-image-placeholder width='48' height='40' text="Costar" fontSize="14px" class="transform hover:scale-110 duration-300 rounded" />
                                     @endif
                                 </div>
                                 <div class="flex-1">
