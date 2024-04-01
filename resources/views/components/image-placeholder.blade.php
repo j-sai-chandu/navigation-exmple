@@ -1,7 +1,7 @@
 @props([
-    'width' => '600', 
-    'height' => '400', 
-    'text' => '600x400',
+    'width' => '100%', 
+    'height' => '100%', 
+    'text' => 'Costar',
     'bgColor' => '#ddd', 
     'fontColor' => '#fff', 
     'fontSize' => '56px', 

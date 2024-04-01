@@ -19,19 +19,63 @@
     </div>
 </section>
 
-<section>
-    <ul>
+<section class="px-6 pt-8 sm:px-20">
+    <div class="grid grid-cols-4 sm:grid-cols-3 gap-6">
         @foreach ($featured_data as $index => $featured)
-            <li>
-                <h2 class="uppercase text-base truncate">{{$featured->name}}</h2>
-            </li>
+            @php
+            $detail_url = route("frontend.$module_name.show",[encode_id($featured->id), $featured->slug]);
+            @endphp
+            <x-frontend.card 
+                :url="$detail_url" 
+                :title="$featured->name" 
+                :image="$featured->featured_image"
+            >
+                <div class="flex flex-row mb-2">
+                    <div class="flex flex-row items-center mr-4 text-gray-400">
+                        <span class="w-5">
+                            <i class="fa fa-user"></i>
+                        </span>
+                        <span class="text-muted text-sm small ml-1">
+                            @if($featured->created_by_alias)
+                            {{ $featured->created_by_alias }}
+                            @else
+                            {{ $featured->created_by_name }}
+                            @endif
+                        </span>
+                    </div>
+                    <div class="flex flex-row items-center mr-4 text-gray-400">
+                        <span class="w-5">
+                            <i class="fa fa-fw fa-folder-open"></i>
+                        </span>
+                        <x-frontend.badge 
+                            :url="route('frontend.categories.show', [encode_id($featured->category_id), $featured->category->slug])" 
+                            :text="$featured->category_name"
+                        />
+                    </div>
+                    @if(count($featured->tags))
+                    <div class="flex flex-row items-center text-gray-400">
+                        <span class="w-5">
+                            <i class="fa fa-tag"></i> 
+                        </span>
+                        @foreach ($featured->tags as $tag)
+                        <x-frontend.badge 
+                            :url="route('frontend.tags.show', [encode_id($tag->id), $tag->slug])" 
+                            :text="$tag->name"
+                        />
+                        @endforeach
+                    </div>
+                    @endif
+                </div>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    {{$featured->intro}}
+                </p>
+            </x-frontend.card>
         @endforeach
-    </ul>
+    </div>
 </section>
 
 <section class="bg-white text-gray-600 p-6 sm:p-20">
     <div class="mx-auto flex md:flex-row flex-col">
-        <!-- Posts list -->
         <div class="flex flex-col lg:flex-grow sm:w-8/12 sm:pr-8">
             <div class="grid grid-cols-1 gap-6">
                 @foreach ($posts_data as $post_singular)
@@ -43,55 +87,49 @@
                         :title="$post_singular->name" 
                         :image="$post_singular->featured_image"
                     >
-                        @if($post_singular->created_by_alias)
-                        <div class="flex flex-row items-center my-2">
-                            <img class="w-5 h-5 sm:w-8 sm:h-8 rounded-full" src="{{asset('images/avatars/'.rand(1, 8).'.jpg')}}" alt="Author profile image" />
-                            <h6 class="text-muted text-sm small ml-2 mb-0">
-                                {{ $post_singular->created_by_alias }}
-                            </h6>
-                        </div>
-                        @else
-                        <div class="flex flex-row items-center my-2">
-                            <img class="w-5 h-5 sm:w-8 sm:h-8 rounded-full" src="{{asset('images/avatars/'.rand(1, 8).'.jpg')}}" alt="" />
-            
-                            <a href='{{ route("frontend.users.profile", encode_id($post_singular->created_by)) }}'>
-                                <h6 class="text-muted text-sm small ml-2 mb-0">
+                        <div class="flex flex-row mb-2">
+                            <div class="flex flex-row items-center mr-4 text-gray-400">
+                                <span class="w-5">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <span class="text-muted text-sm small ml-1">
+                                    @if($post_singular->created_by_alias)
+                                    {{ $post_singular->created_by_alias }}
+                                    @else
                                     {{ $post_singular->created_by_name }}
-                                </h6>
-                            </a>
+                                    @endif
+                                </span>
+                            </div>
+                            <div class="flex flex-row items-center mr-4 text-gray-400">
+                                <span class="w-5">
+                                    <i class="fa fa-fw fa-folder-open"></i>
+                                </span>
+                                <x-frontend.badge 
+                                    :url="route('frontend.categories.show', [encode_id($post_singular->category_id), $post_singular->category->slug])" 
+                                    :text="$post_singular->category_name"
+                                />
+                            </div>
+                            @if(count($post_singular->tags))
+                            <div class="flex flex-row items-center text-gray-400">
+                                <span class="w-5">
+                                    <i class="fa fa-tag"></i> 
+                                </span>
+                                @foreach ($post_singular->tags as $tag)
+                                <x-frontend.badge 
+                                    :url="route('frontend.tags.show', [encode_id($tag->id), $tag->slug])" 
+                                    :text="$tag->name"
+                                />
+                                @endforeach
+                            </div>
+                            @endif
                         </div>
-                        @endif
-            
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             {{$post_singular->intro}}
                         </p>
-                        <div class="flex flex-row items-center">
-                            <span class="w-6">
-                                <i class="fa fa-fw fa-folder-open"></i>
-                            </span>
-                            <x-frontend.badge 
-                                :url="route('frontend.categories.show', [encode_id($post_singular->category_id), $post_singular->category->slug])" 
-                                :text="$post_singular->category_name"
-                            />
-                        </div>
-                        @if(count($post_singular->tags))
-                        <div class="flex flex-row items-center">
-                            <span class="w-6">
-                                <i class="fa fa-tag"></i> 
-                            </span>
-                            @foreach ($post_singular->tags as $tag)
-                            <x-frontend.badge 
-                                :url="route('frontend.tags.show', [encode_id($tag->id), $tag->slug])" 
-                                :text="$tag->name"
-                            />
-                            @endforeach
-                        </div>
-                        @endif
                     </x-frontend.list>
                 @endforeach
             </div>
         </div>
-        <!-- Recent posts -->
         <div class="flex flex-col sm:w-4/12">
             <div class="py-5 sm:pt-0">
                 <div class="w-full mx-auto flex flex-col items-center justify-center border border-gray-200 rounded-md shadow hover:shadow-lg">
@@ -114,7 +152,7 @@
                                     @if($row->featured_image != "")  
                                         <img alt="{{ $row->name }}" src="{{$row->featured_image}}" class="mx-auto object-cover rounded h-10 " />
                                     @else
-                                    <x-image-placeholder width='48' height='40' text="Costar" fontSize="14px" class="transform hover:scale-110 duration-300 rounded" />
+                                    <x-image-placeholder width='48' height='40' text="Costar" fontSize="14px" class="transform hover:scale-110 duration-300" />
                                     @endif
                                 </div>
                                 <div class="flex-1">
