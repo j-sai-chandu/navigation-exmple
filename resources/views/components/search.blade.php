@@ -24,12 +24,12 @@
                     <label for="type-baidu"><span class="text-muted">百度</span></label>
                 </li>
                 <li>
-                    <input type="radio" name="provider" hidden id="type-bing" value="https://cn.bing.com/search?q=" data-placeholder="微软 Bing 搜索" />
-                    <label for="type-bing"><span class="text-muted">必应</span></label>
-                </li>
-                <li>
                     <input type="radio" name="provider" hidden id="type-google" value="https://www.google.com/search?q=" data-placeholder="谷歌搜索" />
                     <label for="type-google"><span class="text-muted">谷歌</span></label>
+                </li>
+                <li>
+                    <input type="radio" name="provider" hidden id="type-bing" value="https://cn.bing.com/search?q=" data-placeholder="微软 Bing 搜索" />
+                    <label for="type-bing"><span class="text-muted">必应</span></label>
                 </li>
                 <li>
                     <input type="radio" name="provider" hidden id="type-anaconda" value="https://anaconda.org/search?q=" data-placeholder="Anaconda 软件搜索" />
@@ -52,16 +52,16 @@
                     <label for="type-google1"><span class="text-muted">谷歌</span></label>
                 </li>
                 <li>
-                    <input type="radio" name="provider" hidden id="type-360" value="https://www.so.com/s?q=" data-placeholder="360 好搜" />
-                    <label for="type-360"><span class="text-muted">360</span></label>
+                    <input type="radio" name="provider" hidden id="type-bing1" value="https://cn.bing.com/search?q=" data-placeholder="微软 Bing 搜索" />
+                    <label for="type-bing1"><span class="text-muted">必应</span></label>
                 </li>
                 <li>
                     <input type="radio" name="provider" hidden id="type-sogo" value="https://www.sogou.com/web?query=" data-placeholder="搜狗搜索" />
                     <label for="type-sogo"><span class="text-muted">搜狗</span></label>
                 </li>
                 <li>
-                    <input type="radio" name="provider" hidden id="type-bing1" value="https://cn.bing.com/search?q=" data-placeholder="微软 Bing 搜索" />
-                    <label for="type-bing1"><span class="text-muted">必应</span></label>
+                    <input type="radio" name="provider" hidden id="type-360" value="https://www.so.com/s?q=" data-placeholder="360 好搜" />
+                    <label for="type-360"><span class="text-muted">360</span></label>
                 </li>
                 <li>
                     <input type="radio" name="provider" hidden id="type-sm" value="https://yz.m.sm.cn/s?q=" data-placeholder="UC 移动端搜索" />
