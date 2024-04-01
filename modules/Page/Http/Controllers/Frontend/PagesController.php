@@ -48,17 +48,18 @@ class PagesController extends Controller
         $module_path = $this->module_path;
         $module_icon = $this->module_icon;
         $module_model = $this->module_model;
-        $module_name_singular = Str::singular($module_name);
 
         $module_action = 'List';
 
         $meta_page_type = 'page';
 
-        $$module_name = $module_model::latest()->paginate(10);
+        $pages_data = $module_model::latest()->paginate(10);
+
+        $recent_data = $module_model::recentlyPublished()->take(5)->get();
 
         return view(
             "$module_path.$module_name.index",
-            compact('module_title', 'module_name', "$module_name", 'module_icon', 'module_action', 'module_name_singular', 'meta_page_type')
+            compact('module_title', 'module_name', 'pages_data', 'recent_data', 'module_icon', 'module_action', 'meta_page_type')
         );
     }
 
