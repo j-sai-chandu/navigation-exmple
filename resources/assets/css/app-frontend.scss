@@ -934,14 +934,9 @@ a {
                 display: none !important;
             }
 
-            .search-provider input:checked+label {
-                opacity: 1;
-            }
-
             .search-provider input:checked+label,
             .search-provider input:hover+label {
-                position: relative;
-                /* background-color: #fff; */
+                opacity: 1;
             }
 
             .search-provider input:checked+label:before {
