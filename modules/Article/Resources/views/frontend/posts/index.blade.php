@@ -43,14 +43,14 @@
                         :image="$post_singular->featured_image"
                     >
                         @if($post_singular->created_by_alias)
-                        <div class="flex flex-row items-center my-4">
+                        <div class="flex flex-row items-center my-2">
                             <img class="w-5 h-5 sm:w-8 sm:h-8 rounded-full" src="{{asset('images/avatars/'.rand(1, 8).'.jpg')}}" alt="Author profile image" />
                             <h6 class="text-muted text-sm small ml-2 mb-0">
                                 {{ $post_singular->created_by_alias }}
                             </h6>
                         </div>
                         @else
-                        <div class="flex flex-row items-center my-4">
+                        <div class="flex flex-row items-center my-2">
                             <img class="w-5 h-5 sm:w-8 sm:h-8 rounded-full" src="{{asset('images/avatars/'.rand(1, 8).'.jpg')}}" alt="" />
             
                             <a href='{{ route("frontend.users.profile", encode_id($post_singular->created_by)) }}'>
