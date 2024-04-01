@@ -14,7 +14,9 @@
                 The list of {{ __($module_name) }}.
             </p>
             
+            @if(strtoupper(App::getLocale()) == "ZH_CN")
             <x-search />
+            @endif
 
             @include('frontend.includes.messages')
             
