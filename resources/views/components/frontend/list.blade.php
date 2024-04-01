@@ -4,9 +4,9 @@
     <div class="flex-0-0-300 mx-4">
         <a href="{{$url}}">
             @if ($image)
-            <img class="transform hover:scale-110 duration-300" src="{{$image}}" alt="{{$title}}">
+            <img class="transform hover:scale-110 duration-300 rounded-md" src="{{$image}}" alt="{{$title}}">
             @else
-            <x-image-placeholder width='300' height='200' text="Costar" class="transform hover:scale-110 duration-300" />
+            <x-image-placeholder width='300' height='200' text="Costar" class="transform hover:scale-110 duration-300 rounded-md" />
             @endif
         </a>
     </div>
