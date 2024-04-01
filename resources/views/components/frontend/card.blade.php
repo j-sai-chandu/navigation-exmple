@@ -1,17 +1,17 @@
-@props(['url', 'name', 'image'=>''])
+@props(['url', 'title', 'image'=>''])
 
 <div class="flex flex-col bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg dark:bg-gray-800 dark:border-gray-700">
     @if ($image)
     <div class="rounded-t-lg overflow-hidden">
         <a href="{{$url}}">
-            <img class="rounded-t-lg transform hover:scale-110 duration-300" src="{{$image}}" alt="{{$name}}">
+            <img class="rounded-t-lg transform hover:scale-110 duration-300" src="{{$image}}" alt="{{$title}}">
         </a>
     </div>
     @endif
     <div class="mt-5 px-5">
         <a href="{{$url}}">
             <h5 class="mb-2 sm:mb-4 text-lg sm:text-xl font-semibold tracking-tight text-gray-900">
-                {{$name}}
+                {{$title}}
             </h5>
         </a>
     </div>

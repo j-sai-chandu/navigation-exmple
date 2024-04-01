@@ -52,17 +52,17 @@ class SubjectsController extends Controller
         $module_icon = $this->module_icon;
         $module_model = $this->module_model;
         $taxon_model = $this->taxon_model;
-        $module_name_singular = Str::singular($module_name);
 
         $module_action = 'List';
 
         $meta_page_type = 'collection';
 
-        // $$module_name = $module_model::get();
+        // $subjects_data = $module_model::get();
         
         $featured_data = $module_model::where('is_featured', true)->orderBy('created_at', 'desc')->get();
+
+        $recent_data = module_model::recentlyPublished()->take(5)->get();
         
-        // $taxon_data = $taxon_model::select('id', 'name', 'slug', 'status', 'icon_class')->get();
         $taxon_data = $taxon_model::get();
         
         $module_group_data = array();
@@ -86,7 +86,7 @@ class SubjectsController extends Controller
 
         return view(
             "collection::frontend.{$module_path}.index",
-            compact('module_title', 'module_name', "featured_data", 'module_group_data', 'module_icon', 'module_action', 'module_name_singular', 'meta_page_type')
+            compact('module_title', 'module_name', "featured_data", 'module_group_data', 'recent_data', 'module_icon', 'module_action', 'meta_page_type')
         );
     }
 

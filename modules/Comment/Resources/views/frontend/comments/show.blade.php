@@ -60,7 +60,7 @@
             $post = $$module_name_singular->post;
             $post_detail_url = route("frontend.posts.show",[encode_id($post->id), $post->slug]);
             @endphp
-            <x-frontend.card :url="$post_detail_url" :name="$post->name" :image="$post->featured_image">
+            <x-frontend.card :url="$post_detail_url" :title="$post->name" :image="$post->featured_image">
                 @if($post->created_by_alias)
                 <div class="flex flex-row items-center my-4">
                     <img class="w-5 h-5 sm:w-8 sm:h-8 rounded-full" src="{{asset('images/avatars/'.rand(1, 8).'.jpg')}}" alt="Author profile image" />
