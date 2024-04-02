@@ -1,13 +1,13 @@
 <?php
 $user_id_value = '';
-$published_at_value = '';
+$created_at_value = '';
 $moderated_at_value = '';
 $parent_name = '';
 
 if (isset($$module_name_singular)) {
     $user_id_value = ($$module_name_singular->user_name != '') ? $$module_name_singular->user_name : '';
     $parent_name = ($$module_name_singular->parent_id != '') ? $$module_name_singular->parent->name : '';
-    $published_at_value = ($$module_name_singular->moderated_at != '') ? $$module_name_singular->moderated_at->isoFormat('llll') : '';
+    $created_at_value = ($$module_name_singular->created_at != '') ? $$module_name_singular->created_at->isoFormat('llll') : '';
     $moderated_at_value = ($$module_name_singular->moderated_at != '') ? $$module_name_singular->moderated_at->isoFormat('llll') : '';
 }
 ?>
@@ -21,7 +21,7 @@ if (isset($$module_name_singular)) {
             $required = "required";
             ?>
             {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
-            {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
+            {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"])->disabled() }}
         </div>
     </div>
     <div class="col-6">
@@ -109,11 +109,11 @@ if (isset($$module_name_singular)) {
     <div class="col-6">
         <div class="form-group">
             <?php
-            $field_name = 'published_at';
+            $field_name = 'created_at';
             $field_label = label_case($field_name);
             $field_placeholder = $field_label;
             $required = "";
-            $value = $published_at_value;
+            $value = $created_at_value;
             ?>
             {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"])->value($value)->disabled() }}
@@ -192,18 +192,7 @@ if (isset($$module_name_singular)) {
     });
 </script>
 
-<!-- Datetime-picker & Moment Js-->
+<!-- Moment.js-->
 <script src="{{ asset('vendor/moment/moment.min.js') }}"></script>
-<script src="{{ asset('vendor/datetime-picker/datetime-picker.js') }}"></script>
-<script type="module">
-    new DateTimePicker("published_at", {
-        singleDatePicker: true,
-        timePicker: true,
-        timePicker24Hour: true,
-        locale: {
-            format: "YYYY-MM-DD HH:mm:ss",
-        },
-    });
-</script>
 
 @endpush

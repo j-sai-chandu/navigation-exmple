@@ -86,7 +86,7 @@ class PostsController extends Controller
 
         $module_action = 'List';
 
-        $$module_name = $module_model::select('id', 'name', 'category_name', 'status', 'updated_at', 'published_at', 'is_featured');
+        $$module_name = $module_model::select('id', 'name', 'category_name', 'status', 'updated_at', 'created_at', 'is_featured');
 
         $data = $$module_name;
 

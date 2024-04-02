@@ -31,7 +31,6 @@ class CommentFactory extends Factory
             'commentable_type' => 'Modules\Article\Models\Post',
             'moderated_by' => $this->faker->numberBetween(1, 2),
             'moderated_at' => Carbon::now(),
-            'published_at' => Carbon::now(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

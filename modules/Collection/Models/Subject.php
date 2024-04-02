@@ -91,7 +91,7 @@ class Subject extends BaseModel
     {
         return $query->where('is_featured', '=', 'Yes')
             ->where('status', '=', '1')
-            ->where('published_at', '<=', Carbon::now());
+            ->where('created_at', '<=', Carbon::now());
     }
 
     /**

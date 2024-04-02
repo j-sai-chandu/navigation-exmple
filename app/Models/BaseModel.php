@@ -25,7 +25,7 @@ class BaseModel extends Model implements HasMedia
 
     protected $casts = [
         'deleted_at' => 'datetime',
-        'published_at' => 'datetime',
+        'created_at' => 'datetime',
     ];
 
     /**

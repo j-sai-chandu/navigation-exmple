@@ -22,7 +22,7 @@ class Comment extends BaseModel
 
     protected $casts = [
         'deleted_at' => 'datetime',
-        'published_at' => 'datetime',
+        'created_at' => 'datetime',
         'moderated_at' => 'datetime',
     ];
 
@@ -89,17 +89,17 @@ class Comment extends BaseModel
     }
 
     /**
-     * Set the published at
+     * Set the created at
      * If no value submitted use the 'Title'.
      *
      * @param [type]
      */
     public function setPublishedAtAttribute($value)
     {
-        $this->attributes['published_at'] = $value;
+        $this->attributes['created_at'] = $value;
 
         if (empty($value) && $this->attributes['status'] === 1) {
-            $this->attributes['published_at'] = Carbon::now();
+            $this->attributes['created_at'] = Carbon::now();
         }
     }
 
@@ -121,7 +121,7 @@ class Comment extends BaseModel
     public function scopePublished($query)
     {
         return $query->where('status', '=', '1')
-            ->whereDate('published_at', '<=', Carbon::today()
+            ->whereDate('created_at', '<=', Carbon::today()
                 ->toDateString());
     }
 
@@ -134,8 +134,8 @@ class Comment extends BaseModel
     public function scopeRecentlyPublished($query)
     {
         return $query->where('status', '=', '1')
-            ->whereDate('published_at', '<=', Carbon::today()->toDateString())
-            ->orderBy('published_at', 'desc');
+            ->whereDate('created_at', '<=', Carbon::today()->toDateString())
+            ->orderBy('created_at', 'desc');
     }
 
     /**

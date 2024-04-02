@@ -8,13 +8,13 @@ trait CommentPresenter
 {
     public function getPublishedAtFormattedAttribute()
     {
-        $diff = Carbon::now()->diffInHours($this->published_at);
+        $diff = Carbon::now()->diffInHours($this->created_at);
 
         if ($diff < 24) {
-            return $this->published_at->diffForHumans();
+            return $this->created_at->diffForHumans();
         }
 
-        return $this->published_at->isoFormat('llll');
+        return $this->created_at->isoFormat('llll');
     }
 
     public function getStatusFormattedAttribute()

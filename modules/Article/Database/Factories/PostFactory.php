@@ -39,7 +39,6 @@ class PostFactory extends Factory
             'created_by_name' => '',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
-            'published_at' => Carbon::now(),
         ];
     }
 }

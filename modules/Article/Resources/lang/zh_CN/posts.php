@@ -13,7 +13,6 @@ return [
     'is_featured' => 'Is Featured',
     'tags' => '标签',
     'status' => '状态',
-    'published_at' => '发布于',
     'meta_title' => 'Meta Title',
     'meta_keywords' => 'Meta Keywords',
     'meta_description' => 'Meta Description',

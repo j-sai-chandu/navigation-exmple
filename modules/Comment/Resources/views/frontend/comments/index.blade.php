@@ -31,7 +31,7 @@
                 {!! $$module_name_singular->comment !!}
             </p>
             <p class="mb-4">
-                <small>{{$$module_name_singular->published_at_formatted}}</small>
+                <small>{{$$module_name_singular->created_at_formatted}}</small>
             </p>
 
             <hr class="my-4">
@@ -52,7 +52,7 @@
                         {!! $$module_name_singular->comment !!}
                     </p>
                     <p class="mb-4">
-                        <small>{{$$module_name_singular->published_at_formatted}}</small>
+                        <small>{{$$module_name_singular->created_at_formatted}}</small>
                     </p>
 
                     <hr class="my-4">

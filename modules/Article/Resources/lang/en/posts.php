@@ -13,7 +13,6 @@ return [
     'is_featured' => 'Is Featured',
     'tags' => 'Tags',
     'status' => 'Status',
-    'published_at' => 'Published At',
     'meta_title' => 'Meta Title',
     'meta_keywords' => 'Meta Keywords',
     'meta_description' => 'Meta Description',

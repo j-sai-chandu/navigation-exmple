@@ -43,7 +43,6 @@ class CreatePostsTable extends Migration
             $table->integer('updated_by')->unsigned()->nullable();
             $table->integer('deleted_by')->unsigned()->nullable();
 
-            $table->timestamp('published_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

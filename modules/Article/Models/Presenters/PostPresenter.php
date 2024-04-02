@@ -27,19 +27,19 @@ trait PostPresenter
     }
 
     /**
-     * Get the formatted published_at attribute.
+     * Get the formatted created_at attribute.
      *
      * @return string
      */
     public function getPublishedAtFormattedAttribute()
     {
-        $diff = Carbon::now()->diffInHours($this->published_at);
+        $diff = Carbon::now()->diffInHours($this->created_at);
 
         if ($diff < 24) {
-            return $this->published_at->diffForHumans();
+            return $this->created_at->diffForHumans();
         }
 
-        return $this->published_at->isoFormat('llll');
+        return $this->created_at->isoFormat('llll');
     }
 
     public function getStatusFormattedAttribute()
@@ -50,8 +50,8 @@ trait PostPresenter
                 break;
 
             case '1':
-                if ($this->published_at >= Carbon::now()) {
-                    return '<span class="badge bg-warning text-dark">'.__("Scheduled").' ('.$this->published_at_formatted.')</span>';
+                if ($this->created_at >= Carbon::now()) {
+                    return '<span class="badge bg-warning text-dark">'.__("Scheduled").' ('.$this->created_at_formatted.')</span>';
                 }
 
                 return '<span class="badge bg-success">'.__("Pubished").'</span>';
