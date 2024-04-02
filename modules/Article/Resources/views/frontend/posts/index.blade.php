@@ -33,18 +33,6 @@
                 <div class="flex flex-row mb-2">
                     <div class="flex flex-row items-center mr-4 text-gray-400">
                         <span class="w-5">
-                            <i class="fa fa-user"></i>
-                        </span>
-                        <span class="text-muted text-sm small ml-1">
-                            @if($featured->created_by_alias)
-                            {{ $featured->created_by_alias }}
-                            @else
-                            {{ $featured->created_by_name }}
-                            @endif
-                        </span>
-                    </div>
-                    <div class="flex flex-row items-center mr-4 text-gray-400">
-                        <span class="w-5">
                             <i class="fa fa-fw fa-folder-open"></i>
                         </span>
                         <x-frontend.badge 
@@ -88,19 +76,7 @@
                         :image="$post_singular->featured_image"
                     >
                         <div class="flex flex-row mb-2">
-                            <div class="flex flex-row items-center mr-4 text-gray-400">
-                                <span class="w-5">
-                                    <i class="fa fa-user"></i>
-                                </span>
-                                <span class="text-muted text-sm small ml-1">
-                                    @if($post_singular->created_by_alias)
-                                    {{ $post_singular->created_by_alias }}
-                                    @else
-                                    {{ $post_singular->created_by_name }}
-                                    @endif
-                                </span>
-                            </div>
-                            <div class="flex flex-row items-center mr-4 text-gray-400">
+                            <div class="flex flex-row items-center mr-4 text-gray-500">
                                 <span class="w-5">
                                     <i class="fa fa-fw fa-folder-open"></i>
                                 </span>
@@ -110,7 +86,7 @@
                                 />
                             </div>
                             @if(count($post_singular->tags))
-                            <div class="flex flex-row items-center text-gray-400">
+                            <div class="flex flex-row items-center text-gray-500">
                                 <span class="w-5">
                                     <i class="fa fa-tag"></i> 
                                 </span>
@@ -123,7 +99,7 @@
                             </div>
                             @endif
                         </div>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-500">
                             {{$post_singular->intro}}
                         </p>
                     </x-frontend.list>

@@ -43,6 +43,7 @@
             <div class="py-5 border-b">
                 <div class="flex flex-col sm:flex-row justify-between">
                     <div class="pb-2">
+                        <i class="fa fa-user"></i>
                         @lang('Written by'): {{isset($$module_name_singular->created_by_alias)? $$module_name_singular->created_by_alias : $$module_name_singular->created_by_name}}
                     </div>
                     <div class="pb-2">

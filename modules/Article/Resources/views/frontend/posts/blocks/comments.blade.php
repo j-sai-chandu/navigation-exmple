@@ -82,15 +82,13 @@
             @foreach ($comments_level1 as $comment)
 
             <div class="flex flex-col my-10">
-                <div>
-                    <a href="#" class="block p-6  bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                        <h4 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {{$comment->name}}
-                        </h4>
-                        <div class="font-normal text-gray-700 dark:text-gray-400">
-                            {!!$comment->comment!!}
-                        </div>
-                    </a>
+                <div href="#" class="block p-6 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h4 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        {{$comment->name}}
+                    </h4>
+                    <div class="font-normal text-gray-700 dark:text-gray-400">
+                        {!!$comment->comment!!}
+                    </div>
                 </div>
 
                 @php
@@ -99,12 +97,10 @@
 
                 @if ($comments_of_comment)
                 @foreach ($comments_of_comment as $comment_reply)
-                <div class="ml-4 my-4">
-                    <a href="#" class="block p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                        <div class="font-normal text-gray-700 dark:text-gray-400">
-                            {!!$comment_reply->comment!!}
-                        </div>
-                    </a>
+                <div class="ml-4 my-4 p-6 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <div class="font-normal text-gray-700 dark:text-gray-400">
+                        {!!$comment_reply->comment!!}
+                    </div>
                 </div>
 
                 @endforeach
