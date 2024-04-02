@@ -34,8 +34,6 @@ class PostsRequest extends FormRequest
             'created_by_alias' => 'nullable|max:191',
             'featured_image' => 'nullable|max:191',
             'is_featured' => 'nullable',
-            'order' => 'nullable|numeric',
-            
         ];
     }
 }
