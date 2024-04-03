@@ -108,7 +108,7 @@
         </div>
         <div class="flex flex-col sm:w-4/12">
             <div class="py-5 sm:pt-0">
-                <div class="w-full mx-auto flex flex-col items-center justify-center border border-gray-200 rounded-md shadow hover:shadow-lg">
+                <div class="w-full mx-auto flex flex-col items-center justify-center border border-gray-200 rounded-md hover:shadow-lg">
                     <div class="w-full px-6 py-4 border-b border-gray-100">
                         <h3 class="text-lg leading-6 font-medium text-gray-800">
                             @lang('Recent Posts')
