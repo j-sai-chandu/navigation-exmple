@@ -1,7 +1,7 @@
 @props(['title', 'desc', 'more_url'])
 
-<div class="w-full mx-auto flex flex-col items-center justify-center border border-gray-200 rounded-md hover:shadow-lg">
-    <div class="w-full relative px-6 py-4 border-b border-gray-100">
+<div class="card w-full mx-auto flex flex-col items-center justify-center border border-gray-200 rounded-md hover:shadow-lg">
+    <div class="card-header w-full relative px-6 py-4 border-b border-gray-100">
         <h3 class="text-lg leading-6 font-medium text-gray-800">
             @lang($title)
         </h3>
@@ -14,7 +14,8 @@
         </span>
         @endif
     </div>
-    <div class="w-full py-3">
+    <div class="card-body w-full py-3">
         {!! $slot !!}
     </div>
+    <div class="card-footer"></div>
 </div>
