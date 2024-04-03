@@ -61,7 +61,7 @@ class SubjectsController extends Controller
         
         $featured_data = $module_model::where('is_featured', true)->orderBy('created_at', 'desc')->get();
 
-        $recent_data = module_model::recentlyPublished()->take(5)->get();
+        $recent_data = $module_model::recentlyPublished()->take(5)->get();
         
         $taxon_data = $taxon_model::get();
         
