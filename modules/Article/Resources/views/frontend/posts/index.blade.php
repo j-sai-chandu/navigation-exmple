@@ -123,19 +123,19 @@
                         $detail_url = route("frontend.posts.show",[encode_id($row->id), $row->slug]);
                         @endphp
                         <li class="flex items-center flex-row flex-1 transition duration-500 ease-in-out transform hover:-translate-y-1 px-6 py-3">
-                            <a class="flex w-full" href="{{$detail_url}}">
-                                <div class="flex-0-0-48 justify-center items-center mr-4">
+                            <a class="block relative flex w-full" href="{{$detail_url}}">
+                                <div class="flex-0-0-48 flex justify-center items-center mr-4">
                                     @if($row->featured_image != "")  
                                         <img alt="{{ $row->name }}" src="{{$row->featured_image}}" class="mx-auto object-cover rounded h-10 " />
                                     @else
-                                    <x-image-placeholder width='48' height='40' text="Costar" fontSize="14px" class="rounded transform hover:scale-110 duration-300" />
+                                    <x-image-placeholder width='48' height='40' text="Costar" fontSize="12px" class="rounded transform hover:scale-110 duration-300" />
                                     @endif
                                 </div>
                                 <div class="flex-1">
-                                    <div class="font-medium">
+                                    <div class="text-base">
                                         {{ $row->name }}
                                     </div>
-                                    <div class="text-gray-600 text-sm">
+                                    <div class="text-gray-400 text-sm">
                                         {{ $row->category_name }}
                                     </div>
                                 </div>
