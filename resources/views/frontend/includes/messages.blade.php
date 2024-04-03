@@ -11,7 +11,7 @@
 </div>
 @endif
 
-<x-frontend.flash-message />
+<x-flash-message />
 
 @if (session('status'))
 <p class="alert alert-success">{{ session('status') }}</p>

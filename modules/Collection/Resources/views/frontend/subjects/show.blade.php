@@ -38,7 +38,7 @@
                     {!!$$module_name_singular->description!!}
                 </div>
                 <div class="mb-2">
-                    <x-frontend.badge :url="route('frontend.taxons.show', [encode_id($$module_name_singular->taxon_id), $$module_name_singular->taxon->slug])" :text="$$module_name_singular->taxon_name" />
+                    <x-badge :url="route('frontend.taxons.show', [encode_id($$module_name_singular->taxon_id), $$module_name_singular->taxon->slug])" :text="$$module_name_singular->taxon_name" />
                 </div>
             </div>
         </div>

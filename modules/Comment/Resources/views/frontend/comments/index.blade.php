@@ -26,7 +26,7 @@
         $detail_url = route("frontend.$module_name.show",[encode_id($$module_name_singular->id), $$module_name_singular->slug]);
         @endphp
 
-        <x-frontend.card :url="$detail_url" :title="$$module_name_singular->name">
+        <x-frontend.content-card :url="$detail_url" :title="$$module_name_singular->name">
             <p class="mb-4 text-gray-700 dark:text-gray-400">
                 {!! $$module_name_singular->comment !!}
             </p>
@@ -39,7 +39,7 @@
             <h6>
                 {{ __('Post') }}: <a class="underline hover:text-gray-800" href="{{route('frontend.posts.show', [encode_id($$module_name_singular->post->id), $$module_name_singular->post->slug])}}">{{$$module_name_singular->post->name}}</a>
             </h6>
-        </x-frontend.card>
+        </x-frontend.content-card>
 
         <!-- <div class="bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <div class="p-5 flex flex-col items-stretch">

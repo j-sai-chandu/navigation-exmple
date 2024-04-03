@@ -26,14 +26,14 @@
         $detail_url = route("frontend.$module_name.show", [encode_id($$module_name_singular->id), $$module_name_singular->slug]);
         @endphp
 
-        <x-frontend.card :url="$detail_url" :title="$$module_name_singular->name">
+        <x-frontend.content-card :url="$detail_url" :title="$$module_name_singular->name">
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                 {{$$module_name_singular->description}}
             </p>
             <p class="mb-3 font-weight-bold">
                 Total {{$$module_name_singular->subjects->count()}} subjects.
             </p>
-        </x-frontend.card>
+        </x-frontend.content-card>
 
         @endforeach
     </div>

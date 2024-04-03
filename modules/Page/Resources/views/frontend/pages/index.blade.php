@@ -29,14 +29,14 @@
                     $detail_url = route("frontend.$module_name.show",[encode_id($page_singular->id), $page_singular->slug]);
                     @endphp
                 
-                    <x-frontend.list 
+                    <x-frontend.content-list 
                         :url="$detail_url"
                         :title="$page_singular->name"
                     >
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             {{$page_singular->description}}
                         </p>
-                    </x-frontend.list>
+                    </x-frontend.content-list>
         
                 @endforeach
             </div>

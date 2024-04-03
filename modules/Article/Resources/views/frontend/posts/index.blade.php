@@ -25,7 +25,7 @@
             @php
             $detail_url = route("frontend.$module_name.show",[encode_id($featured->id), $featured->slug]);
             @endphp
-            <x-frontend.card 
+            <x-frontend.content-card 
                 :url="$detail_url" 
                 :title="$featured->name" 
                 :image="$featured->featured_image"
@@ -35,7 +35,7 @@
                         <span class="w-5">
                             <i class="fa fa-fw fa-folder-open"></i>
                         </span>
-                        <x-frontend.badge 
+                        <x-badge 
                             :url="route('frontend.categories.show', [encode_id($featured->category_id), $featured->category->slug])" 
                             :text="$featured->category_name"
                         />
@@ -46,7 +46,7 @@
                             <i class="fa fa-tag"></i> 
                         </span>
                         @foreach ($featured->tags as $tag)
-                        <x-frontend.badge 
+                        <x-badge 
                             :url="route('frontend.tags.show', [encode_id($tag->id), $tag->slug])" 
                             :text="$tag->name"
                         />
@@ -57,7 +57,7 @@
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                     {{$featured->intro}}
                 </p>
-            </x-frontend.card>
+            </x-frontend.content-card>
         @endforeach
     </div>
 </section>
@@ -70,7 +70,7 @@
                     @php
                         $detail_url = route("frontend.$module_name.show",[encode_id($post_singular->id), $post_singular->slug]);
                     @endphp
-                    <x-frontend.list 
+                    <x-frontend.content-list 
                         :url="$detail_url" 
                         :title="$post_singular->name" 
                         :image="$post_singular->featured_image"
@@ -80,7 +80,7 @@
                                 <span class="w-5">
                                     <i class="fa fa-fw fa-folder-open"></i>
                                 </span>
-                                <x-frontend.badge 
+                                <x-badge 
                                     :url="route('frontend.categories.show', [encode_id($post_singular->category_id), $post_singular->category->slug])" 
                                     :text="$post_singular->category_name"
                                 />
@@ -91,7 +91,7 @@
                                     <i class="fa fa-tag"></i> 
                                 </span>
                                 @foreach ($post_singular->tags as $tag)
-                                <x-frontend.badge 
+                                <x-badge 
                                     :url="route('frontend.tags.show', [encode_id($tag->id), $tag->slug])" 
                                     :text="$tag->name"
                                 />
@@ -102,7 +102,7 @@
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-500">
                             {{$post_singular->intro}}
                         </p>
-                    </x-frontend.list>
+                    </x-frontend.content-list>
                 @endforeach
             </div>
         </div>
