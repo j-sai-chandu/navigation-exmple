@@ -1,5 +1,9 @@
 @import "./coreui.css";
 
+@import "../../../modules/Page/Resources/assets/css/backend.scss";
+@import "../../../modules/Article/Resources/assets/css/backend.scss";
+@import "../../../modules/Collection/Resources/assets/css/backend.scss";
+
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
