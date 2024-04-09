@@ -41,7 +41,7 @@
     <!-- / Scripts -->
 </head>
 
-<body>
+<body class="page-{{$module_name}}">
 
     @include('frontend.includes.header')
 
