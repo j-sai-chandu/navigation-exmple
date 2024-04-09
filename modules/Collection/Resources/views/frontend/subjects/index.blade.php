@@ -76,12 +76,12 @@
                         $favicon = getFavicon($featured->site);
                     @endphp
                     <div 
-                        class="flex flex-col p-2 rounded-lg hover:bg-light-blue"
+                        class="flex flex-col rounded-lg hover:bg-light-blue"
                         data-toggle="tooltip" 
                         data-coreui-placement="top" 
                         title="{{$featured->description ?? $featured->name}}"
                     >
-                        <a class="subject-item block" href="{{$target_link}}" target="_blank">
+                        <a class="subject-item block p-2" href="{{$target_link}}" target="_blank">
                             <div class="flex items-center">
                                 <div class="flex-0-0-48">
                                     <div class="favicon">
@@ -89,7 +89,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 truncate">
-                                    <h2 class="uppercase text-base truncate">{{$featured->name}}</h2>
+                                    <h2 class="subject-name uppercase text-base truncate">{{$featured->name}}</h2>
                                     <p class="text-gray-500 truncate">
                                         {{$featured->site}}
                                     </p>
@@ -132,12 +132,12 @@
                         $favicon = getFavicon($data['site']);
                         @endphp
                         <div 
-                            class="flex flex-col p-2 rounded-lg hover:bg-light-blue"
+                            class="flex flex-col rounded-lg hover:bg-light-blue"
                             data-toggle="tooltip" 
                             data-coreui-placement="top" 
                             title="{{$data['description'] ?? $data['name']}}"
                         >
-                            <a class="subject-item block" href="{{$target_link}}" target="_blank">
+                            <a class="subject-item block p-2" href="{{$target_link}}" target="_blank">
                                 <div class="flex items-center">
                                     <div class="flex-0-0-48">
                                         <div class="favicon">
@@ -145,7 +145,7 @@
                                         </div>
                                     </div>
                                     <div class="flex-1 truncate">
-                                        <h2 class="uppercase text-base truncate">{{$data['name']}}</h2>
+                                        <h2 class="subject-name uppercase text-base truncate">{{$data['name']}}</h2>
                                         <p class="text-gray-500 truncate">
                                             {{$data['site']}}
                                         </p>

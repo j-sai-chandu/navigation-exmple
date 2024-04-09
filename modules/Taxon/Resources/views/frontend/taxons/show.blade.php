@@ -37,8 +37,8 @@
             data-coreui-placement="top" 
             title="{{$subject->description ?? $subject->name}}"
         >
-            <div class="flex flex-col items-stretch p-3">
-                <a class="subject-item block" href="{{$target_link}}" target="_blank">
+            <div class="flex flex-col items-stretch">
+                <a class="subject-item block p-3" href="{{$target_link}}" target="_blank">
                     <div class="flex items-center">
                         <div class="flex-0-0-48">
                             <div class="favicon">
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="flex-1 truncate">
-                            <h2 class="uppercase text-base font-semibold truncate">
+                            <h2 class="subject-name uppercase text-base font-semibold truncate">
                                 {{$subject->name}}
                             </h2>
                             <p class="text-gray-500 truncate">

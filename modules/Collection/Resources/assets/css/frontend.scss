@@ -1,0 +1,10 @@
+.page-subjects,
+.page-taxons {
+    .subject-item {
+        &:hover {
+            .subject-name {
+                color: rgb(234 88 12 / var(--tw-border-opacity));
+            }
+        }
+    }
+}

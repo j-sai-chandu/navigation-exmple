@@ -18,9 +18,9 @@
     </div>
 </section>
 
-<section class="bg-gray-100">
-    <div class="container mx-auto flex md:flex-row flex-col bg-white rounded-md">
-        <div class="w-full flex flex-row items-center py-10 px-10">
+<section class="bg-gray-100 truncate">
+    <div class="container mx-auto mb-8 flex md:flex-row flex-col bg-white rounded-md">
+        <div class="flex flex-row items-center sm:w-8/12 py-10 px-10">
             <div class="flex-0-0-100 mr-4">
                 @php
                 $favicon = getFavicon($$module_name_singular->site);
@@ -43,6 +43,9 @@
                     <x-badge :url="route('frontend.taxons.show', [encode_id($$module_name_singular->taxon_id), $$module_name_singular->taxon->slug])" :text="$$module_name_singular->taxon_name" />
                 </div>
             </div>
+        </div>
+        <div class="flex flex-row items-center sm:w-4/12 py-10 px-10">
+            AD
         </div>
     </div>
 </section>
