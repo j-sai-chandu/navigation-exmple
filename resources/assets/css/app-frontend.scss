@@ -683,17 +683,17 @@ a {
    * StickySidebar
    * =========================================================================
    */
-.collection_sidebar {
-    .collection_sidebar_inner {}
+.sticky_sidebar {
+    .sticky_sidebar_inner {}
 }
 
 @media (max-width: 768px) {
-    .collection_sidebar {
+    .sticky_sidebar {
         display: none !important;
     }
 }
 
-.collection_content {}
+.sticky_content {}
 
 /**
    * ScrollManager

@@ -1,6 +1,6 @@
 
 /**
- * ScrollManager
+ * ScrollNavigation
  */
 (function () {
 	//////////////////////
@@ -40,16 +40,13 @@
 	// Scroll Module
 	//////////////////////
 
-	const ScrollManager = (function () {
+	const ScrollNavigation = (function () {
 
 		let defaults = {
-
-			sections: null,
 			navigationContainer: null,
+			sections: null,
 			links: null,
 			scrollToTopBtn: null,
-
-			navigationElementClass: '.quick-navigation',
 			currentSectionClass: 'current',
 			smoothScrollEnabled: true,
 			sectionsCheckEnabled: true,
@@ -72,7 +69,7 @@
 			smoothScrollAnimation: function (target) {
 				$('html, body').animate({
 					scrollTop: target
-				}, 'linear');// slow
+				}, 'linear'); // slow
 			}
 		};
 
@@ -189,6 +186,6 @@
 		}
 	})();
 	
-	window.ScrollManager = ScrollManager;
+	window.ScrollNavigation = ScrollNavigation;
 
 })();

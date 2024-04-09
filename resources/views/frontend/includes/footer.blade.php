@@ -25,3 +25,72 @@
         </button>
     </div>
 </footer>
+
+<!-- StickySidebar -->
+<script>
+    $(document).ready(function(){
+        //////////////////////
+    	// StickySidebar
+    	//////////////////////
+    	
+        const sidebar = document.querySelector('.sticky_sidebar');
+        const content = document.querySelector('.sticky_content');
+        const sidebar_inner = document.querySelector('.sticky_sidebar_inner');
+
+        if(sidebar && content && sidebar_inner) {
+            new StickySidebar(".sticky_sidebar", {
+                containerSelector: ".sticky_content",
+                innerWrapperSelector: ".sticky_sidebar_inner",
+                topSpacing: 20,
+                bottomSpacing: 20,
+            });
+        }
+    });
+</script>
+
+<!-- ScrollNavigation -->
+<script>
+    $(document).ready(function(){
+        //////////////////////
+    	// ScrollNavigation init
+    	//////////////////////
+    
+    	let navigationContainer = document.querySelector('.quick-navigation'),
+    		links = navigationContainer ? navigationContainer.querySelectorAll('.quick-navigation-link') : null,
+    		sections = document.querySelectorAll('.scroll-section'),
+    		progressIndicator = document.querySelector('.scroll-progress-indicator'),
+    		scrollToTopBtn = document.querySelector('.scroll-to-top');
+    
+        if(navigationContainer) {
+            ScrollNavigation.init({
+                navigationContainer: navigationContainer,
+                links: links,
+                sections: sections,
+                scrollToTopBtn: scrollToTopBtn,
+        
+                // Customize onScroll behavior
+                onScroll: function () {
+                    const percentage = ScrollManager.getScrollPercentage();
+                    if (percentage >= 10) {
+                        scrollToTopBtn.classList.add('visible');
+                        progressIndicator.innerHTML = percentage + "%";
+                        progressIndicator.classList.add('visible');
+                    } else {
+                        scrollToTopBtn.classList.remove('visible');
+                        progressIndicator.classList.remove('visible');
+                    }
+                },
+        
+                // Behavior when a section changes
+                // default : highlight links 
+        
+                // onSectionChange: function (section) {},
+        
+                //smoothScrollAnimation: function (target) {
+                //    TweenLite.to(window, 2, {scrollTo:{y:target}, ease:Power2.easeOut});
+                //}
+        
+            });
+        }
+    });
+</script>

@@ -25,8 +25,8 @@
 </section>
 
 <section class="mx-auto flex md:flex-row flex-col bg-gray-100 text-gray-600 p-8">
-    <div class="collection_sidebar relative flex flex-col flex-0-0-200">
-        <div class="collection_sidebar_inner">
+    <div class="sticky_sidebar relative flex flex-col flex-0-0-200">
+        <div class="sticky_sidebar_inner">
             <ul class="quick-navigation rounded-lg p-4 bg-white border border-gray-200">
                 @if(count(json_decode($featured_data)) > 0)
                 <li class="quick-navigation-item my-2">
@@ -52,7 +52,7 @@
             <div class="scroll-progress-indicator rounded-lg visible">0%</div>
         </div>
     </div>
-    <div class="collection_content flex flex-col flex-1 pl-6">
+    <div class="sticky_content flex flex-col flex-1 pl-6">
         @if(count(json_decode($featured_data)) > 0)
         <div id="featured" class="card scroll-section mb-6 px-6 py-4 bg-white border border-gray-200 rounded-lg hover:shadow-lg">
             <div class="card-header flex items-center justify-between mb-3 pb-2 border-b">
@@ -160,64 +160,5 @@
         @endforeach
     </div>
 </section>
-<script>
-    $(document).ready(function(){
-        //////////////////////
-    	// StickySidebar
-    	//////////////////////
-    	
-        new StickySidebar(".collection_sidebar", {
-            topSpacing: 20,
-            bottomSpacing: 20,
-            containerSelector: ".collection_content",
-            innerWrapperSelector: ".collection_sidebar_inner",
-        });
-
-
-        //////////////////////
-    	// ScrollManager init
-    	//////////////////////
-    
-    	let navigationContainer = document.querySelector('.quick-navigation'),
-    		links = navigationContainer ? navigationContainer.querySelectorAll('.quick-navigation-link') : null,
-    		sections = document.querySelectorAll('.scroll-section'),
-    		progressIndicator = document.querySelector('.scroll-progress-indicator'),
-    		scrollToTopBtn = document.querySelector('.scroll-to-top');
-    
-    	ScrollManager.init({
-    		sections: sections,
-    		scrollToTopBtn: scrollToTopBtn,
-    		navigationContainer: navigationContainer,
-    		links: links,
-    
-    		// Customize onScroll behavior
-    		onScroll: function () {
-    			const percentage = ScrollManager.getScrollPercentage();
-    			if (percentage >= 10) {
-    			    scrollToTopBtn.classList.add('visible');
-    				progressIndicator.innerHTML = percentage + "%";
-    				progressIndicator.classList.add('visible');
-    			} else {
-    			    scrollToTopBtn.classList.remove('visible');
-    				progressIndicator.classList.remove('visible');
-    			}
-    		},
-    
-    		// Behavior when a section changes
-    		// default : highlight links 
-    
-    		// onSectionChange: function (section) {},
-    
-    		//smoothScrollAnimation: function (target) {
-    		//    TweenLite.to(window, 2, {scrollTo:{y:target}, ease:Power2.easeOut});
-    		//}
-    
-    	});
-    
-    	//////////////////////
-    	// END ScrollManager init
-    	//////////////////////
-    });
-</script>
 
 @endsection
