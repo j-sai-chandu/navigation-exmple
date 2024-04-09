@@ -1,3 +1,7 @@
+@php
+$route_path = Request::route()->getName();
+@endphp
+
 <nav class="bg-white drop-shadow-md" x-data="{ showMobileNav: false }">
     <div class="max-w-7xl mx-auto px-2 py-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
@@ -29,17 +33,29 @@
                 </div>
                 <div class="hidden sm:block sm:ml-6">
                     <div class="frontend-main-menu flex space-x-4">
-                        <a href="{{ route('frontend.index') }}" class="{{ Request::route()->getName() == 'frontend.index' ? 'active ' : ''}}text-gray-600 border-transparent border-b-2 hover:border-orange-600 px-3 py-2 text-base font-medium transition ease-out duration-300">
-                            {{__('Home')}}
+                        <a 
+                            href="{{ route('frontend.index') }}" 
+                            class="{{ $route_path == 'frontend.index' ? 'active border-orange-600' : 'border-transparent'}} text-gray-600 border-b-2 hover:border-orange-600 px-3 py-2 text-base font-medium transition ease-out duration-300"
+                        >
+                            @lang('Home')
                         </a>
-                        <a href="{{ route('frontend.pages.index') }}" class="{{ Request::route()->getName() == 'frontend.pages.index' ? 'active ' : ''}}text-gray-600 border-transparent border-b-2 hover:border-orange-600 px-3 py-2 text-base font-medium transition ease-out duration-300">
-                            {{__('Pages')}}
+                        <a 
+                            href="{{ route('frontend.pages.index') }}" 
+                            class="{{ $route_path == 'frontend.pages.index' || $route_path == 'frontend.pages.show' ? 'active border-orange-600' : 'border-transparent'}} text-gray-600 border-b-2 hover:border-orange-600 px-3 py-2 text-base font-medium transition ease-out duration-300"
+                        >
+                            @lang('Pages')
                         </a>
-                        <a href="{{ route('frontend.posts.index') }}" class="{{ Request::route()->getName() == 'frontend.posts.index' ? 'active ' : ''}}text-gray-600 border-transparent border-b-2 hover:border-orange-600 px-3 py-2 text-base font-medium transition ease-out duration-300">
-                            {{__('Article')}}
+                        <a 
+                            href="{{ route('frontend.posts.index') }}" 
+                            class="{{ $route_path == 'frontend.posts.index' || $route_path == 'frontend.posts.show' ? 'active border-orange-600' : 'border-transparent'}} text-gray-600 border-b-2 hover:border-orange-600 px-3 py-2 text-base font-medium transition ease-out duration-300"
+                        >
+                            @lang('Article')
                         </a>
-                        <a href="{{ route('frontend.subjects.index') }}" class="{{ Request::route()->getName() == 'frontend.subjects.index' ? 'active ' : ''}}text-gray-600 border-transparent border-b-2 hover:border-orange-600 px-3 py-2 text-base font-medium transition ease-out duration-300">
-                            {{__('Collection')}}
+                        <a 
+                            href="{{ route('frontend.subjects.index') }}" 
+                            class="{{ $route_path == 'frontend.subjects.index' || $route_path == 'frontend.subjects.show' ? 'active border-orange-600' : 'border-transparent'}} text-gray-600 border-b-2 hover:border-orange-600 px-3 py-2 text-base font-medium transition ease-out duration-300"
+                        >
+                            @lang('Collection')
                         </a>
                     </div>
                 </div>
