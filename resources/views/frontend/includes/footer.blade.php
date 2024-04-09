@@ -18,6 +18,7 @@
         </div>
     </div>
     <div class="relative">
+        <div class="scroll-progress-indicator text-xs text-gray-500 rounded-lg visible">0%</div>
         <button class="scroll-to-top rounded-lg hover:bg-gray-300">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="#f0f0f0">
                 <path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM377 271L273 167c-9.4-9.4-24.6-9.4-33.9 0L135 271c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l87-87 87 87c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9z"/>
@@ -37,7 +38,7 @@
         const content = document.querySelector('.sticky_content');
         const sidebar_inner = document.querySelector('.sticky_sidebar_inner');
 
-        if(sidebar && content && sidebar_inner) {
+        if(StickySidebar && sidebar && content && sidebar_inner) {
             new StickySidebar(".sticky_sidebar", {
                 containerSelector: ".sticky_content",
                 innerWrapperSelector: ".sticky_sidebar_inner",
@@ -56,34 +57,40 @@
     	//////////////////////
     
     	let navigationContainer = document.querySelector('.quick-navigation'),
-    		links = navigationContainer ? navigationContainer.querySelectorAll('.quick-navigation-link') : null,
+    		navLinks = navigationContainer ? navigationContainer.querySelectorAll('.quick-navigation-link') : null,
     		sections = document.querySelectorAll('.scroll-section'),
     		progressIndicator = document.querySelector('.scroll-progress-indicator'),
     		scrollToTopBtn = document.querySelector('.scroll-to-top');
-    
-        if(navigationContainer) {
+        
+        if(ScrollNavigation) {
             ScrollNavigation.init({
-                navigationContainer: navigationContainer,
-                links: links,
-                sections: sections,
-                scrollToTopBtn: scrollToTopBtn,
+                navigationContainer,
+                navLinks,
+                sections,
+                scrollToTopBtn,
         
                 // Customize onScroll behavior
                 onScroll: function () {
-                    const percentage = ScrollManager.getScrollPercentage();
+                    const percentage = ScrollNavigation.getScrollPercentage();
                     if (percentage >= 10) {
-                        scrollToTopBtn.classList.add('visible');
-                        progressIndicator.innerHTML = percentage + "%";
-                        progressIndicator.classList.add('visible');
+                        if(scrollToTopBtn) {
+                            scrollToTopBtn.classList.add('visible');
+                        }
+                        if(progressIndicator) {
+                            progressIndicator.innerHTML = percentage + "%";
+                            progressIndicator.classList.add('visible');
+                        }
                     } else {
-                        scrollToTopBtn.classList.remove('visible');
-                        progressIndicator.classList.remove('visible');
+                        if(scrollToTopBtn) {
+                            scrollToTopBtn.classList.remove('visible');
+                        }
+                        if(progressIndicator) {
+                            progressIndicator.classList.remove('visible');
+                        }
                     }
                 },
         
                 // Behavior when a section changes
-                // default : highlight links 
-        
                 // onSectionChange: function (section) {},
         
                 //smoothScrollAnimation: function (target) {
@@ -92,5 +99,6 @@
         
             });
         }
+        
     });
 </script>

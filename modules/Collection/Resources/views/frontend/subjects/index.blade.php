@@ -49,7 +49,6 @@
                 	</li>
                 @endforeach
             </ul>
-            <div class="scroll-progress-indicator rounded-lg visible">0%</div>
         </div>
     </div>
     <div class="sticky_content flex flex-col flex-1 pl-6">

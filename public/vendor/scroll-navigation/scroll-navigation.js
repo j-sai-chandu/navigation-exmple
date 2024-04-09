@@ -45,7 +45,7 @@
 		let defaults = {
 			navigationContainer: null,
 			sections: null,
-			links: null,
+			navLinks: null,
 			scrollToTopBtn: null,
 			currentSectionClass: 'current',
 			smoothScrollEnabled: true,
@@ -56,7 +56,7 @@
 
 			onSectionChange: function (section) {
 				let self = this;
-				let relativeLink = [].filter.call(options.links, function (link) {
+				let relativeLink = [].filter.call(options.navLinks, function (link) {
 					link.classList.remove(self.currentSectionClass);
 					return (link.hash === '#' + section.id) || ($(link).attr("data-href")  === '#' + section.id);
 				});
@@ -87,10 +87,10 @@
 
 				options = extend(defaults, opts);
 
-				if (!options.sections) {
-					console.warn('Smooth scrolling require some sections to scroll to :)');
-					return false;
-				}
+				// if (!options.sections || options.sections.length === 0) {
+				// 	console.warn('Smooth scrolling require some sections to scroll to :)');
+				// 	return false;
+				// }
 
 				// Activate smooth scrolling
 				if (options.smoothScrollEnabled) {
@@ -114,7 +114,7 @@
 
 			getScrollPosition: function () {
 				this.scrollPosition = window.pageYOffset || window.scrollY;
-				if (options.sectionsCheckEnabled) {
+				if (options.sections && options.sections.length > 0 && options.sectionsCheckEnabled) {
 				    this.checkActiveSection();
 				}
 				if (typeof options.onScroll === 'function') {
