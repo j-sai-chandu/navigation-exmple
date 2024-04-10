@@ -43,28 +43,28 @@
             <div class="py-5 border-b">
                 <div class="flex flex-col sm:flex-row justify-between">
                     <div class="pb-2">
-                        <i class="fa fa-user"></i>
-                        @lang('Written by'): {{isset($$module_name_singular->created_by_alias)? $$module_name_singular->created_by_alias : $$module_name_singular->created_by_name}}
+                        <i class="fa fa-user pr-1"></i> 
+                        {{isset($$module_name_singular->created_by_alias) ? $$module_name_singular->created_by_alias : $$module_name_singular->created_by_name}}
                     </div>
                     <div class="pb-2">
-                        @lang('Created at'): {{$$module_name_singular->created_at->isoFormat('llll')}}
+                        <i class="fa fa-calendar-alt pr-1"></i> 
+                        {{$$module_name_singular->created_at->isoFormat('llll')}}
                     </div>
                 </div>
             </div>
 
             <div class="flex flex-row items-center py-5 border-b">
-                <span class="font-weight-bold">
-                    @lang('Categories'):
+                <span class="inline-block pr-1">
+                    <i class="fa fa-fw fa-folder-open"></i>
                 </span>
                 <x-badge :url="route('frontend.categories.show', [encode_id($$module_name_singular->category_id), $$module_name_singular->category->slug])" :text="$$module_name_singular->category_name" />
             </div>
 
             @if (count($$module_name_singular->tags))
             <div class="py-5 border-b">
-                <span class="font-weight-bold">
-                    @lang('Tags'):
+                <span class="inline-block">
+                    <i class="fa fa-tag"></i> 
                 </span>
-
                 @foreach ($$module_name_singular->tags as $tag)
                 <x-badge :url="route('frontend.tags.show', [encode_id($tag->id), $tag->slug])" :text="$tag->name" />
                 @endforeach
