@@ -36,15 +36,6 @@
                 :image="$post->featured_image"
             >
                 <div class="flex flex-row mb-2">
-                    <div class="flex flex-row items-center mr-4 text-gray-500">
-                        <span class="w-5">
-                            <i class="fa fa-fw fa-folder-open"></i>
-                        </span>
-                        <x-badge 
-                            :url="route('frontend.categories.show', [encode_id($post->category_id), $post->category->slug])" 
-                            :text="$post->category_name"
-                        />
-                    </div>
                     @if(count($post->tags))
                     <div class="flex flex-row items-center text-gray-500">
                         <span class="w-5">
