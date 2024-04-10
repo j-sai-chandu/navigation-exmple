@@ -20,7 +20,7 @@
 </section>
 
 <section class="bg-white p-6 sm:p-20">
-    <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+    <div class="grid grid-cols-4 sm:grid-cols-3 gap-6">
         @foreach ($$module_name as $$module_name_singular)
             @php
                 $detail_url = route("frontend.$module_name.show",[encode_id($$module_name_singular->id), $$module_name_singular->slug]);
@@ -31,7 +31,7 @@
                         {{$$module_name_singular->name}}
                     </div>
                     @if($$module_name_singular->description)
-                    <p class="font-normal text-gray-500 mb-3">
+                    <p class="font-normal text-gray-500 mb-3 truncate">
                         {{$$module_name_singular->description}}
                     </p>
                     @endif
