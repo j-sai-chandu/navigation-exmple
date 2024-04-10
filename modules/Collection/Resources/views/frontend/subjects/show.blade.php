@@ -28,24 +28,26 @@
                 <img class="w-24 h-24 rounded-lg" src="{{getFavicon($$module_name_singular->site)}}" alt="{{$$module_name_singular->name}}" />
             </div>
             <div class="flex flex-col flex-1">
-                <div class="mb-2 uppercase text-base truncate">
+                <div class="mb-2 uppercase truncate text-lg text-gray-600 font-semibold">
                     {{$$module_name_singular->name}}
                 </div>
                 @if($$module_name_singular->site != "")
-                <div class="mb-2 leading-relaxed">
+                <div class="mb-2 truncate text-gray-600">
                     <a href="{{$$module_name_singular->site}}" target="_blank">{{$$module_name_singular->site}} <i class="far fa-external-link"></i></a>
                 </div>
                 @endif
+                @if($$module_name_singular->description != "")
                 <div class="mb-2 text-gray-400">
                     {!!$$module_name_singular->description!!}
                 </div>
+                @endif
                 <div class="mb-2">
                     <x-badge :url="route('frontend.taxons.show', [encode_id($$module_name_singular->taxon_id), $$module_name_singular->taxon->slug])" :text="$$module_name_singular->taxon_name" />
                 </div>
             </div>
         </div>
         <div class="flex flex-row items-center sm:w-4/12 py-10 px-10">
-            AD
+            <div class="text-gray-600">AD</div>
         </div>
     </div>
 </section>
