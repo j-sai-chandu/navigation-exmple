@@ -25,7 +25,7 @@
 </section>
 
 <section class="bg-white text-gray-600 p-6 sm:p-20">
-    <div class="">
+    <div class="grid grid-cols-1 gap-6">
         @foreach ($posts as $post)
             @php
                 $detail_url = route("frontend.posts.show",[encode_id($post->id), $post->slug]);
