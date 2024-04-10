@@ -27,11 +27,16 @@
             @endphp
             <a class="block" href="{{$detail_url}}">    
                 <div class="bg-white p-5 border border-gray-200 rounded-lg shadow-sharp hover:shadow-lg dark:bg-gray-800 dark:border-gray-700">
-                    <h5 class="text-lg sm:text-xl font-semibold text-gray-900">
+                    <div class="uppercase text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                         {{$$module_name_singular->name}}
-                    </h5>
-                    <p class="font-normal text-gray-500">
+                    </div>
+                    @if($$module_name_singular->description)
+                    <p class="font-normal text-gray-500 mb-3">
                         {{$$module_name_singular->description}}
+                    </p>
+                    @endif
+                    <p class="text-sm text-gray-500">
+                        @lang("Total :count posts", ['count'=>$$module_name_singular->posts->count()])
                     </p>
                 </div>
             </a>
