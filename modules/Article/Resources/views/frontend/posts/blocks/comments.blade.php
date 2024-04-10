@@ -17,7 +17,7 @@
         <button class="btn btn-light" @click="commentBlock = !commentBlock">{{__('Write a comment')}}</button>
     </div>
 
-    <div x-show="commentBlock" x-collapse>
+    <div class="shadow-sharp px-6 pt-2 pb-4 mt-3 border rounded-lg" x-show="commentBlock" x-collapse>
         <div class="py-4">
             Your comment will be in the moderation queue. If your comment will be approved, you will get notification and it will be displayed here.
             <br>
