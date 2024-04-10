@@ -19,10 +19,10 @@
     </div>
 </section>
 
-<section class="bg-white text-gray-600 p-6 sm:p-20">
+<section class="bg-white text-gray-600 p-6 md:p-20">
     <div class="mx-auto flex md:flex-row flex-col">
         <!-- Pages list -->
-        <div class="flex flex-col lg:flex-grow sm:w-8/12 sm:pr-8">
+        <div class="sm:w-full md:w-8/12 sm:pr-8">
             <div class="grid grid-cols-1 gap-6">
                 @foreach ($pages_data as $page_singular)
                     @php
@@ -42,7 +42,7 @@
             </div>
         </div>
         <!-- Recent pages -->
-        <div class="flex flex-col sm:w-4/12">
+        <div class="sm:w-full md:w-4/12">
             <div class="py-5 sm:pt-0">
                 <div class="w-full mx-auto flex flex-col items-center justify-center border border-gray-200 rounded-md hover:shadow-lg">
                     <div class="w-full px-6 py-3 border-b border-gray-100">

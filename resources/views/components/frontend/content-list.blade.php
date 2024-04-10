@@ -1,7 +1,7 @@
 @props(['url', 'title', 'image'=>''])
 
-<div class="flex flex-row items-center p-6 bg-white border border-gray-200 rounded-lg shadow-sharp hover:shadow-lg dark:bg-gray-800 dark:border-gray-700">
-    <div class="flex-0-0-300 mr-4">
+<div class="flex flex-col lg:flex-row items-center p-6 bg-white border border-gray-200 rounded-lg shadow-sharp hover:shadow-lg dark:bg-gray-800 dark:border-gray-700">
+    <div class="lg:flex-0-0-300 mr-4">
         <a href="{{$url}}">
             @if ($image)
             <img class="transform hover:scale-110 duration-300 rounded-md" src="{{$image}}" alt="{{$title}}">
@@ -10,7 +10,7 @@
             @endif
         </a>
     </div>
-    <div class="flex flex-col flex-1 px-5">
+    <div class="w-full lg:flex-1 pl-2">
         <a class="block mb-2" href="{{$url}}">
             <h5 class="text-lg sm:text-xl font-semibold">
                 {{$title}}

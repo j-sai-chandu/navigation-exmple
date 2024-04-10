@@ -19,8 +19,8 @@
     </div>
 </section>
 
-<section class="px-6 pt-8 sm:px-20">
-    <div class="grid grid-cols-4 sm:grid-cols-3 gap-6">
+<section class="px-6 pt-8 md:px-20">
+    <div class="grid grid-cols-4 md:grid-cols-3 gap-6">
         @foreach ($featured_data as $index => $featured)
             @php
             $detail_url = route("frontend.$module_name.show",[encode_id($featured->id), $featured->slug]);
@@ -54,17 +54,19 @@
                     </div>
                     @endif
                 </div>
+                @if($featured->intro)
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                     {{$featured->intro}}
                 </p>
+                @endif
             </x-frontend.content-card>
         @endforeach
     </div>
 </section>
 
-<section class="bg-white text-gray-600 p-6 sm:p-20">
+<section class="bg-white text-gray-600 p-6 md:p-20">
     <div class="mx-auto flex md:flex-row flex-col">
-        <div class="flex flex-col lg:flex-grow sm:w-8/12 sm:pr-8">
+        <div class="sm:w-full md:w-8/12 sm:pr-8">
             <div class="grid grid-cols-1 gap-6">
                 @foreach ($posts_data as $post_singular)
                     @php
@@ -106,7 +108,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="flex flex-col sm:w-4/12">
+        <div class="sm:w-full md:w-4/12">
             <div class="py-5 sm:pt-0">
                 <div class="w-full mx-auto flex flex-col items-center justify-center border border-gray-200 rounded-md hover:shadow-lg">
                     <div class="w-full px-6 py-4 border-b border-gray-100">

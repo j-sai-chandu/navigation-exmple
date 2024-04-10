@@ -152,6 +152,90 @@ a {
     flex: 0 0 400px;
 }
 
+@media (min-width: 640px) {
+
+    .sm\:flex-0-0-24 {
+        flex: 0 0 24px;
+    }
+    
+    .sm\:flex-0-0-48 {
+        flex: 0 0 48px;
+    }
+    
+    .sm\:flex-0-0-100 {
+        flex: 0 0 100px;
+    }
+    
+    .sm\:flex-0-0-200 {
+        flex: 0 0 200px;
+    }
+    
+    .sm\:flex-0-0-300 {
+        flex: 0 0 300px;
+    }
+    
+    .sm\:flex-0-0-400 {
+        flex: 0 0 400px;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .md\:flex-0-0-24 {
+        flex: 0 0 24px;
+    }
+    
+    .md\:flex-0-0-48 {
+        flex: 0 0 48px;
+    }
+    
+    .md\:flex-0-0-100 {
+        flex: 0 0 100px;
+    }
+    
+    .md\:flex-0-0-200 {
+        flex: 0 0 200px;
+    }
+    
+    .md\:flex-0-0-300 {
+        flex: 0 0 300px;
+    }
+    
+    .md\:flex-0-0-400 {
+        flex: 0 0 400px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .lg\:flex-0-0-24 {
+        flex: 0 0 24px;
+    }
+    
+    .lg\:flex-0-0-48 {
+        flex: 0 0 48px;
+    }
+    
+    .lg\:flex-0-0-100 {
+        flex: 0 0 100px;
+    }
+    
+    .lg\:flex-0-0-200 {
+        flex: 0 0 200px;
+    }
+    
+    .lg\:flex-0-0-300 {
+        flex: 0 0 300px;
+    }
+    
+    .lg\:flex-0-0-400 {
+        flex: 0 0 400px;
+    }
+
+}
+
 /**
  * box-shadow
  * =========================================================================

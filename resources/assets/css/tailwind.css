@@ -3007,6 +3007,65 @@ select {
         margin-top: 0
     }
 
+    .md\:p-20 {
+        padding: 5rem
+    }
+
+    .md\:px-0 {
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    .md\:px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem
+    }
+
+    .md\:px-20 {
+        padding-left: 5rem;
+        padding-right: 5rem
+    }
+
+    .md\:px-24 {
+        padding-left: 6rem;
+        padding-right: 6rem
+    }
+
+    .md\:py-10 {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem
+    }
+
+    .md\:py-16 {
+        padding-top: 4rem;
+        padding-bottom: 4rem
+    }
+
+    .md\:py-20 {
+        padding-top: 5rem;
+        padding-bottom: 5rem
+    }
+
+    .md\:pb-0 {
+        padding-bottom: 0
+    }
+
+    .md\:pr-0 {
+        padding-right: 0
+    }
+
+    .md\:pr-8 {
+        padding-right: 2rem
+    }
+
+    .md\:pt-0 {
+        padding-top: 0
+    }
+
+    .md\:pt-6 {
+        padding-top: 1.5rem
+    }
+
     .md\:grid {
         display: grid
     }
@@ -3017,6 +3076,14 @@ select {
 
     .md\:w-3\/5 {
         width: 60%
+    }
+
+    .md\:w-4\/12 {
+        width: 33.333333%
+    }
+
+    .md\:w-8\/12 {
+        width: 66.666667%
     }
 
     .md\:grid-cols-3 {
@@ -3055,6 +3122,14 @@ select {
 
     .lg\:max-w-lg {
         max-width: 32rem
+    }
+
+    .lg\:grid {
+        display: grid
+    }
+
+    .lg\:flex-row {
+        flex-direction: row
     }
 
     .lg\:flex-grow {
