@@ -25,37 +25,44 @@
 </section>
 
 <section class="bg-white text-gray-600 p-6 sm:p-20">
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div class="">
         @foreach ($posts as $post)
-        @php
-        $detail_url = route("frontend.posts.show",[encode_id($post->id), $post->slug]);
-        @endphp
-        <div class="bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            @if($post->featured_image != "")
-            <a href="{{$detail_url}}">
-                <img class="rounded-t-lg" src="{{$post->featured_image}}" alt="{{$post->name}}" />
-            </a>
-            @endif
-            <div class="p-5 flex flex-col items-stretch">
-                <a href="{{$detail_url}}">
-                    <h2 class="mb-2 text-2xl text-gray-900 dark:text-white">
-                        {{$post->name}}
-                    </h2>
-                </a>
-                <p class="flex-1 h-full mb-3 font-normal text-gray-700 dark:text-gray-400">
+            @php
+                $detail_url = route("frontend.posts.show",[encode_id($post->id), $post->slug]);
+            @endphp
+            <x-frontend.content-list 
+                :url="$detail_url"
+                :title="$post->name" 
+                :image="$post->featured_image"
+            >
+                <div class="flex flex-row mb-2">
+                    <div class="flex flex-row items-center mr-4 text-gray-500">
+                        <span class="w-5">
+                            <i class="fa fa-fw fa-folder-open"></i>
+                        </span>
+                        <x-badge 
+                            :url="route('frontend.categories.show', [encode_id($post->category_id), $post->category->slug])" 
+                            :text="$post->category_name"
+                        />
+                    </div>
+                    @if(count($post->tags))
+                    <div class="flex flex-row items-center text-gray-500">
+                        <span class="w-5">
+                            <i class="fa fa-tag"></i> 
+                        </span>
+                        @foreach ($post->tags as $tag)
+                        <x-badge 
+                            :url="route('frontend.tags.show', [encode_id($tag->id), $tag->slug])" 
+                            :text="$tag->name"
+                        />
+                        @endforeach
+                    </div>
+                    @endif
+                </div>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-500">
                     {{$post->intro}}
                 </p>
-
-                <div class="text-end">
-                    <a href="{{$detail_url}}" class="inline-flex items-center text-sm text-gray-700 hover:text-gray-100 bg-gray-200 hover:bg-gray-700 py-2 px-3 rounded">
-                        @lang('Read more')
-                        <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
+            </x-frontend.content-list>
         @endforeach
     </div>
     <div class="d-flex justify-content-center w-100 mt-4">

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="bg-gray-100 text-gray-600 py-20">
+<section class="bg-gray-100 py-20">
     <div class="container mx-auto flex px-5 items-center justify-center flex-col">
         <div class="text-center lg:w-2/3 w-full">
             <h1 class="text-3xl sm:text-4xl mb-4 font-medium text-gray-800">
@@ -19,19 +19,22 @@
     </div>
 </section>
 
-<section class="bg-white text-gray-600 p-6 sm:p-20">
+<section class="bg-white p-6 sm:p-20">
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
         @foreach ($$module_name as $$module_name_singular)
-        @php
-        $detail_url = route("frontend.$module_name.show",[encode_id($$module_name_singular->id), $$module_name_singular->slug]);
-        @endphp
-        
-        <x-frontend.content-card :url="$detail_url" :title="$$module_name_singular->name">
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                {{$$module_name_singular->description}}
-            </p>
-        </x-frontend.content-card>
-
+            @php
+                $detail_url = route("frontend.$module_name.show",[encode_id($$module_name_singular->id), $$module_name_singular->slug]);
+            @endphp
+            <a class="block" href="{{$detail_url}}">    
+                <div class="bg-white p-5 border border-gray-200 rounded-lg shadow-sharp hover:shadow-lg dark:bg-gray-800 dark:border-gray-700">
+                    <h5 class="text-lg sm:text-xl font-semibold text-gray-900">
+                        {{$$module_name_singular->name}}
+                    </h5>
+                    <p class="font-normal text-gray-500">
+                        {{$$module_name_singular->description}}
+                    </p>
+                </div>
+            </a>
         @endforeach
     </div>
     <div class="d-flex justify-content-center w-100 mt-3">

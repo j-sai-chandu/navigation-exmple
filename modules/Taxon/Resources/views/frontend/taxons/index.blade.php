@@ -27,7 +27,7 @@
                 $icon = $$module_name_singular->icon_class ? icon($$module_name_singular->icon_class) : icon("fa fa-folder-open");
             @endphp
         
-            <div class="flex flex-col p-4 bg-white border border-gray-200 rounded-lg hover:shadow-lg dark:bg-gray-800 dark:border-gray-700">
+            <div class="flex flex-col p-4 bg-white border border-gray-200 rounded-lg shadow-sharp hover:shadow-lg dark:bg-gray-800 dark:border-gray-700">
                 <a class="py-2 px-3" href="{{$detail_url}}" target="_blank">
                     <div class="flex">
                         <span class="pr-2">{!! html_entity_decode($icon) !!}</span>

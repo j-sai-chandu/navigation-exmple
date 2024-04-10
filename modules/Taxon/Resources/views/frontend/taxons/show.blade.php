@@ -32,13 +32,12 @@
         $favicon = getFavicon($subject->site);
         @endphp
         <div 
-            class="bg-white rounded-lg border border-gray-200 hover:shadow-lg dark:bg-gray-800 dark:border-gray-700"
+            class="bg-white rounded-lg border border-gray-200 shadow-sharp hover:shadow-lg dark:bg-gray-800 dark:border-gray-700"
             data-toggle="tooltip" 
             data-coreui-placement="top" 
             title="{{$subject->description ?? $subject->name}}"
         >
-            <div class="flex flex-col items-stretch">
-                <a class="subject-item block p-3" href="{{$target_link}}" target="_blank">
+            <a class="subject-item block p-3" href="{{$target_link}}" target="_blank">
                     <div class="flex items-center">
                         <div class="flex-0-0-48">
                             <div class="favicon">
@@ -55,7 +54,6 @@
                         </div>
                     </div>
                 </a>
-            </div>
         </div>
         @endforeach
     </div>
