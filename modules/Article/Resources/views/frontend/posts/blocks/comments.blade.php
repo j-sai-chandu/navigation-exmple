@@ -32,7 +32,7 @@
             $field_placeholder = $field_label;
             $required = "required";
             ?>
-            {{ html()->label($field_label, $field_name)->class(' mb-2 text-sm font-medium text-gray-900 dark:text-gray-300') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class(' mb-2 text-sm font-medium text-gray-900 dark:text-gray-300') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500')->attributes(["$required"]) }}
         </div>
 
@@ -43,7 +43,7 @@
             $field_placeholder = $field_label;
             $required = "required";
             ?>
-            {{ html()->label($field_label, $field_name)->class(' mb-2 text-sm font-medium text-gray-900 dark:text-gray-300') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class(' mb-2 text-sm font-medium text-gray-900 dark:text-gray-300') }} {!! field_required($required) !!}
             {{ html()->textarea($field_name)->placeholder($field_placeholder)->class('block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500')->attributes(["$required", "rows"=>"4"]) }}
         </div>
 

@@ -7,7 +7,7 @@
             $field_placeholder = $field_label;
             $required = "required";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -20,7 +20,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -36,7 +36,7 @@
             $field_placeholder = __("Select an option");
             $required = "required";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->select($field_name, isset($$module_name_singular)?optional($$module_name_singular->$field_relation)->pluck('name', 'id'):'')->placeholder($field_placeholder)->class('form-control select2-taxon')->attributes(["$required"]) }}
         </div>
     </div>
@@ -53,7 +53,7 @@
                 '2' => __('Draft')
             ];
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->select($field_name, $select_options)->placeholder($field_placeholder)->class('form-select')->attributes(["$required"]) }}
         </div>
     </div>
@@ -68,7 +68,7 @@
             $field_placeholder = $field_label;
             $required = "required";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -84,7 +84,7 @@
                 '0' => __('No'),
             ];
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->select($field_name, $select_options)->placeholder($field_placeholder)->class('form-select')->attributes(["$required"]) }}
         </div>
     </div>
@@ -99,7 +99,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->textarea($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -114,7 +114,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -126,7 +126,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -141,7 +141,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -153,7 +153,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>

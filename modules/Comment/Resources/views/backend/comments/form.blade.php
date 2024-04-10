@@ -20,7 +20,7 @@ if (isset($$module_name_singular)) {
             $field_placeholder = $field_label;
             $required = "required";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"])->disabled() }}
         </div>
     </div>
@@ -37,7 +37,7 @@ if (isset($$module_name_singular)) {
                 '2'=>'Rejected',
             ];
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->select($field_name, $select_options)->placeholder($field_placeholder)->class('form-control select2-status')->attributes(["$required"]) }}
         </div>
     </div>
@@ -51,7 +51,7 @@ if (isset($$module_name_singular)) {
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->textarea($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -67,7 +67,7 @@ if (isset($$module_name_singular)) {
             $required = "required";
             $value = $user_id_value;
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control select2-users')->attributes(["$required"])->value($value)->disabled() }}
             {{ html()->hidden($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
             
@@ -84,7 +84,7 @@ if (isset($$module_name_singular)) {
             $required = "required";
             $value = $parent_name;
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"])->value($value)->disabled() }}
             {{ html()->hidden($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
             <!--{{ html()->select($field_name, isset($$module_name_singular) ? optional($$module_name_singular->parent_id) : '')->placeholder($field_placeholder)->class('form-control select2-posts')->attributes(["$required"])->value($value) }}-->
@@ -101,7 +101,7 @@ if (isset($$module_name_singular)) {
             $required = "";
             $value = $moderated_at_value;
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"])->value($value)->disabled() }}
             {{ html()->hidden($field_name)->class('form-control')->attributes(["$required"]) }}
         </div>
@@ -115,7 +115,7 @@ if (isset($$module_name_singular)) {
             $required = "";
             $value = $created_at_value;
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"])->value($value)->disabled() }}
             {{ html()->hidden($field_name)->class('form-control')->attributes(["$required"]) }}
         </div>

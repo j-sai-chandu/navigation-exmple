@@ -7,7 +7,7 @@
             $field_placeholder = $field_label;
             $required = "required";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -19,7 +19,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -38,7 +38,7 @@
                 '2'=>__('Draft')
             ];
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->select($field_name, $select_options)->placeholder($field_placeholder)->class('form-control select2')->attributes(["$required"]) }}
         </div>
     </div>
@@ -50,7 +50,7 @@
             $field_placeholder = "Hide Author User's Name and use Alias";
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -64,7 +64,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->textarea($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -78,7 +78,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             <div class="input-group">
                 {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required", 'aria-label'=>'Image', 'aria-describedby'=>'button-image']) }}
                 <!-- <div class="input-group-append">
@@ -97,7 +97,7 @@
             $field_placeholder = $field_label;
             $required = "required";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->textarea($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -112,7 +112,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -124,7 +124,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -139,7 +139,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -151,7 +151,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
@@ -166,7 +166,7 @@
             $field_placeholder = $field_label;
             $required = "";
             ?>
-            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! fielf_required($required) !!}
+            {{ html()->label($field_label, $field_name)->class('form-label') }} {!! field_required($required) !!}
             {{ html()->text($field_name)->placeholder($field_placeholder)->class('form-control')->attributes(["$required"]) }}
         </div>
     </div>
