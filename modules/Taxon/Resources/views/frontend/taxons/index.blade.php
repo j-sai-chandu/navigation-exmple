@@ -20,22 +20,29 @@
 </section>
 
 <section class="bg-white text-gray-600 p-6 sm:p-20">
-    <div class="grid grid-cols-1 sm:grid-cols-4 gap-6">
+    <div class="grid grid-cols-4 sm:grid-cols-3 gap-6">
         @foreach ($$module_name as $$module_name_singular)
             @php
                 $detail_url = route("frontend.$module_name.show", [encode_id($$module_name_singular->id), $$module_name_singular->slug]);
                 $icon = $$module_name_singular->icon_class ? icon($$module_name_singular->icon_class) : icon("fa fa-folder-open");
             @endphp
         
-            <div class="flex flex-col p-4 bg-white border border-gray-200 rounded-lg shadow-sharp hover:shadow-lg dark:bg-gray-800 dark:border-gray-700">
-                <a class="py-2 px-3" href="{{$detail_url}}" target="_blank">
-                    <div class="flex">
+            <div class="bg-white border border-gray-200 rounded-lg shadow-sharp hover:shadow-lg dark:bg-gray-800 dark:border-gray-700">
+                <a class="block p-5" href="{{$detail_url}}" target="_blank">
+                    <div class="flex mb-2">
                         <span class="pr-2">{!! html_entity_decode($icon) !!}</span>
-                        <h3 class="uppercase mb-2 font-semibold">
+                        <div class="uppercase font-semibold text-gray-900">
                             {{$$module_name_singular->name}}
-                        </h3>
+                        </div>
                     </div>
-                    <p class="text-gray-400">{{$$module_name_singular->description}}</p>
+                    @if($$module_name_singular->description)
+                    <p class="text-sm text-gray-500 mb-3 truncate">
+                        {{$$module_name_singular->description}}
+                    </p>
+                    @endif
+                    <p class="text-xs text-gray-500">
+                        @lang("Total :count subjects", ['count'=>$$module_name_singular->subjects->count()])
+                    </p>
                 </a>
             </div>
 
