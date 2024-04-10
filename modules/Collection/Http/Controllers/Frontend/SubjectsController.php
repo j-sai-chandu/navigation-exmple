@@ -113,11 +113,13 @@ class SubjectsController extends Controller
 
         $$module_name_singular = $module_model::findOrFail($id);
 
+        $random_data = $module_model::inRandomOrder()->take(4)->get();
+
         event(new SubjectViewed($$module_name_singular));
 
         return view(
             "collection::frontend.{$module_name}.show",
-            compact('module_title', 'module_name', 'module_icon', 'module_action', 'module_name_singular', "$module_name_singular", 'meta_page_type')
+            compact('module_title', 'module_name', 'module_icon', 'module_action', 'module_name_singular', "$module_name_singular", 'random_data', 'meta_page_type')
         );
     }
 }

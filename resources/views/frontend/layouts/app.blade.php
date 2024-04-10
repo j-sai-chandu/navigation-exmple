@@ -41,7 +41,7 @@
     <!-- / Scripts -->
 </head>
 
-<body class="page-{{$module_name}}">
+<body class="{{isset($module_name) ? 'page-'.$module_name : 'page-body'}}">
 
     @include('frontend.includes.header')
 

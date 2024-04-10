@@ -497,7 +497,7 @@ select {
 }
 
 *:hover {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 .container {
@@ -2471,7 +2471,7 @@ select {
     color: rgb(17 24 39 / var(--tw-text-opacity))
 }
 
-.hover\:text-orange-600 {
+.hover\:text-orange-600:hover {
     --tw-bg-opacity: 1;
     color: rgb(234 88 12 / var(--tw-bg-opacity))
 }

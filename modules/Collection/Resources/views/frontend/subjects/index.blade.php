@@ -90,8 +90,9 @@
                                 </div>
                                 <div class="flex-1 truncate">
                                     <h2 class="subject-name uppercase text-base truncate">{{$featured->name}}</h2>
-                                    <p class="text-gray-500 truncate">
-                                        {{$featured->site}}
+                                    <p class="text-gray-500 text-sm truncate">
+                                        <!-- {{$featured->site}} -->
+                                        {{$featured->description}}
                                     </p>
                                 </div>
                             </div>
@@ -133,8 +134,8 @@
                         @endphp
                         <div 
                             class="flex flex-col rounded-lg hover:bg-light-blue"
-                            data-toggle="tooltip" 
-                            data-coreui-placement="top" 
+                            data-toggle="tooltip"
+                            data-coreui-placement="top"
                             title="{{$data['description'] ?? $data['name']}}"
                         >
                             <a class="subject-item block p-2" href="{{$target_link}}" target="_blank">
@@ -146,8 +147,9 @@
                                     </div>
                                     <div class="flex-1 truncate">
                                         <h2 class="subject-name uppercase text-base truncate">{{$data['name']}}</h2>
-                                        <p class="text-gray-500 truncate">
-                                            {{$data['site']}}
+                                        <p class="text-gray-500 text-sm truncate">
+                                            <!-- {{$data['site']}} -->
+                                            {{$data->description}}
                                         </p>
                                     </div>
                                 </div>
