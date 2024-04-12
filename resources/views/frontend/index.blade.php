@@ -5,7 +5,7 @@
 @section('content')
 
 <section class="bg-gray-100">
-    <div class="container mx-auto flex px-1 sm:px-20 py-20 md:flex-row flex-col items-center">
+    <div class="container mx-auto px-1 sm:px-20 py-20 flex md:flex-row flex-col items-center">
         <div class="flex flex-col items-center text-center lg:max-w-lg md:w-2/5 w-1/3 mb-10 md:mb-0">
             <img class="object-cover object-center rounded" alt="hero" src="{{asset('images/meta-image.png')}}" />
         </div>
