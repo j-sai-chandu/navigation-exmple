@@ -51,6 +51,8 @@
 
     @include('frontend.includes.footer')
 
+    @include('frontend.includes.script')
+
 </body>
 
 </html>
