@@ -3359,14 +3359,32 @@ input[type='number'] {
       background: #008080;
       color: #fff;
       padding-top: 5px;
+      border-top: 1px solid #007676;
       -webkit-transition: all 0.1s ease-in-out;
-      transition: all 0.1s ease-in-out; }
-      .block input[type='radio'] + label:hover {
+      transition: all 0.1s ease-in-out;
+    }
+    .block input[type='radio'] + label::after {
+      content: "+";
+      height: 16px;
+      line-height: 16px;
+      font-size: 16px;
+      position: absolute;
+      top: 35%;
+      right: 5%;
+    }
+    .block input[type='radio'] + label:hover {
         background: #144242;
         color: #fff;
-        padding-top: 5px; }
+        padding-top: 5px; 
+    }
     .block input[type='radio']:checked + label {
-      background-color: #a9a9a9; }
+      background-color: #a9a9a9; 
+      border-top: none;
+    }
+    .block input[type='radio']:checked + label::after {
+      content: "-";
+      font-size: 20px;
+    }
     .block input[type='radio']:checked ~ .info {
       height: 200px;
       overflow-y: auto;
