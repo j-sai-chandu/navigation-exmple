@@ -27,6 +27,16 @@ a {
 /**
  * Sidebar
  */
+aside.sidebar ~ main.wrapper .header-toggler .menu-unfold-icon,
+aside.sidebar.hide ~ main.wrapper .header-toggler .menu-unfold-icon {
+    display: inline;
+}
+ 
+aside.sidebar ~ main.wrapper .header-toggler .menu-unfold-icon,
+aside.sidebar.hide ~ main.wrapper .header-toggler .menu-fold-icon {
+    display: none;
+}
+
 .sidebar-nav::-webkit-scrollbar {
     width: 8px;
 }
