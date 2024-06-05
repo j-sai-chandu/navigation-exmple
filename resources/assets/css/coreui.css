@@ -4992,7 +4992,7 @@ fieldset:disabled .btn {
     word-wrap: break-word;
     background-color: var(--cui-card-bg);
     background-clip: border-box;
-    border: var(--cui-card-border-width) solid var(--cui-card-border-color);
+    /* border: var(--cui-card-border-width) solid var(--cui-card-border-color); */
     border-radius: var(--cui-card-border-radius)
 }
 
